@@ -1,5 +1,5 @@
 
-package ct414;
+package com.company;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;

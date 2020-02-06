@@ -1,6 +1,6 @@
 // Assessment.java 
 
-package ct414;
+package com.company;
 
 import java.util.Date;
 import java.util.List;

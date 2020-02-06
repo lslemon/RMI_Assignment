@@ -1,4 +1,4 @@
-package ct414;
+package com.company;
 
 public class InvalidOptionNumber extends Exception {
 

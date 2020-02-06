@@ -1,6 +1,6 @@
 // Question.java
 
-package ct414;
+package com.company;
 
 import java.io.Serializable;
 
