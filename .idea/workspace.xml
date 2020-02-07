@@ -2,16 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17beda72-517e-4fd1-a803-476846260528" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/client.policy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/server.policy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Assessment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Assessment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/ExamEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ExamEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ExamServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ExamServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,17 +34,39 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+  <component name="RunManager" selected="Application.Client">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Client" />
       <module name="RMI_Assessment_System" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.ExamEngine" />
+      <module name="RMI_Assessment_System" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Client" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -49,17 +79,61 @@
       <option name="presentableId" value="Default" />
       <updated>1580992695555</updated>
     </task>
+    <task id="LOCAL-00001" summary="Corrected Package names">
+      <created>1580993510000</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580993510000</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Deleted Main Class created by IntelliJ">
+      <created>1580993574731</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1580993574731</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Corrected Package names" />
+    <MESSAGE value="Deleted Main Class created by IntelliJ" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted Main Class created by IntelliJ" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="562" y="115" key="CommitChangelistDialog2" timestamp="1580993507511">
+    <state x="0" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580993790703">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="562" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580993507511" />
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1580993513496">
+    <state x="0" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580993790703" />
+    <state x="275" y="308" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1580993729174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1580993513496" />
+    <state x="275" y="308" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580993729174" />
+    <state x="562" y="115" key="CommitChangelistDialog2" timestamp="1580993572557">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="562" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580993572557" />
+    <state width="914" height="281" key="GridCell.Tab.0.bottom" timestamp="1581013154510">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581013154510" />
+    <state width="914" height="281" key="GridCell.Tab.0.center" timestamp="1581013154510">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581013154510" />
+    <state width="914" height="281" key="GridCell.Tab.0.left" timestamp="1581013154510">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581013154510" />
+    <state width="914" height="281" key="GridCell.Tab.0.right" timestamp="1581013154510">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581013154510" />
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1580993577653">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1580993577653" />
     <state x="661" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1580992771431">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
