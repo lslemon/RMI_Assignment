@@ -53,15 +53,17 @@ public class ExamEngine implements ExamServer {
     }
 
     public static void main(String[] args) {
+//        System.setProperty("java.security.policy","file:./server.policy");
         if (System.getSecurityManager() == null) {
             System.setSecurityManager(new SecurityManager());
         }
         try {
+
             String name = "ExamServer";
             ExamServer engine = new ExamEngine();
             ExamServer stub =
                 (ExamServer) UnicastRemoteObject.exportObject(engine, 0);
-            Registry registry = LocateRegistry.getRegistry();
+            Registry registry = LocateRegistry.getRegistry(20345);
             registry.rebind(name, stub);
             System.out.println("ExamEngine bound");
         } catch (Exception e) {

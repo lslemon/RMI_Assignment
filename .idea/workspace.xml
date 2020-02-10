@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17beda72-517e-4fd1-a803-476846260528" name="Default Changelist" comment="" />
+    <list default="true" id="17beda72-517e-4fd1-a803-476846260528" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/company/Log_in.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Log_in.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMI_Assessment_System/com/company/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMI_Assessment_System/com/company/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMI_Assessment_System/com/company/ExamEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMI_Assessment_System/com/company/ExamEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMI_Assessment_System/com/company/server.policy" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMI_Assessment_System/com/company/server.policy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ExamEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ExamEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/server.policy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/server.policy" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,8 +37,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Client" />
       <module name="RMI_Assessment_System" />
@@ -44,6 +56,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.ExamEngine" />
       <module name="RMI_Assessment_System" />
+      <option name="PROGRAM_PARAMETERS" value="-Djava.rmi.server.codebase=file:/Users/lukes/IdeaProjects/RMI_Assessment_System/ -Djava.rmi.server.hostname=localhost -Djava.security.policy=file:/Users/lukes/IdeaProjects/RMI_Assessment_System/src/com/company/server.policy" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -56,8 +69,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -95,41 +108,57 @@
     <option name="LAST_COMMIT_MESSAGE" value="Deleted Main Class created by IntelliJ" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580993790703">
+    <state x="-12" y="75" width="923" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581170190902">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580993790703" />
+    <state x="-12" y="75" width="923" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581170190902" />
+    <state x="9" y="388" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1581169915128">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="9" y="388" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581169915128" />
+    <state x="285" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1581167499568">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="285" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581167499568" />
     <state x="275" y="308" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1580993729174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="275" y="308" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580993729174" />
-    <state x="562" y="115" key="CommitChangelistDialog2" timestamp="1580993572557">
+    <state x="354" y="412" key="#com.intellij.uiDesigner.palette.ComponentItemDialog.OneOff" timestamp="1581162705677">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="562" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580993572557" />
-    <state width="914" height="281" key="GridCell.Tab.0.bottom" timestamp="1581084574673">
+    <state x="354" y="412" key="#com.intellij.uiDesigner.palette.ComponentItemDialog.OneOff/0.0.1920.1040@0.0.1920.1040" timestamp="1581162705677" />
+    <state x="562" y="115" key="CommitChangelistDialog2" timestamp="1581368340730">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581084574673" />
-    <state width="914" height="281" key="GridCell.Tab.0.center" timestamp="1581084574673">
+    <state x="562" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581368340730" />
+    <state width="914" height="278" key="GridCell.Tab.0.bottom" timestamp="1581368285817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581084574673" />
-    <state width="914" height="281" key="GridCell.Tab.0.left" timestamp="1581084574672">
+    <state width="914" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581368285817" />
+    <state width="914" height="278" key="GridCell.Tab.0.center" timestamp="1581368285816">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581084574672" />
-    <state width="914" height="281" key="GridCell.Tab.0.right" timestamp="1581084574673">
+    <state width="914" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581368285816" />
+    <state width="914" height="278" key="GridCell.Tab.0.left" timestamp="1581368285816">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581084574673" />
+    <state width="914" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581368285816" />
+    <state width="914" height="278" key="GridCell.Tab.0.right" timestamp="1581368285816">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581368285816" />
     <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1580993577653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1580993577653" />
-    <state x="661" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1580992771431">
+    <state x="661" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1581367875892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="661" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580992771431" />
+    <state x="661" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581367875892" />
+    <state x="250" y="405" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1581162044316">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="250" y="405" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581162044316" />
   </component>
 </project>
