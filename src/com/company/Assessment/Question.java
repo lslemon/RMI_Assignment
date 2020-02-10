@@ -1,6 +1,6 @@
 // Question.java
 
-package com.company;
+package com.company.Assessment;
 
 import java.io.Serializable;
 
