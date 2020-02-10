@@ -1,6 +1,8 @@
 // ExamServer.java
 
-package com.company;
+package com.company.assessment;
+
+import com.company.client.UnauthorizedAccess;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -10,7 +12,7 @@ public interface ExamServer extends Remote {
 
 	// Return an access token that allows access to the server for some time period
 	public int login(int studentid, String password) throws 
-		UnauthorizedAccess, RemoteException;
+		UnauthorizedAccess, RemoteException, UnauthorizedAccess;
 
 	// Return a summary list of Assessments currently available for this studentid
 	public List<String> getAvailableSummary(int token, int studentid) throws

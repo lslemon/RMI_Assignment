@@ -1,4 +1,4 @@
-package com.company;
+package com.company.client;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

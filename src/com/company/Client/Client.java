@@ -1,6 +1,4 @@
-package com.company;
-
-import com.company.ExamServer;
+package com.company.client;
 
 import javax.swing.*;
 import java.awt.*;

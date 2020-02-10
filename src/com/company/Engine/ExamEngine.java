@@ -1,5 +1,10 @@
 
-package com.company;
+package com.company.engine;
+
+import com.company.assessment.Assessment;
+import com.company.assessment.ExamServer;
+import com.company.assessment.NoMatchingAssessment;
+import com.company.client.UnauthorizedAccess;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -17,7 +22,7 @@ public class ExamEngine implements ExamServer {
 
     // Implement the methods defined in the ExamServer interface...
     // Return an access token that allows access to the server for some time period
-    public int login(int studentid, String password) throws 
+    public int login(int studentid, String password) throws
                 UnauthorizedAccess, RemoteException {
 
 	// TBD: You need to implement this method!
@@ -46,8 +51,8 @@ public class ExamEngine implements ExamServer {
     }
 
     // Submit a completed assessment
-    public void submitAssessment(int token, int studentid, Assessment completed) throws 
-                UnauthorizedAccess, NoMatchingAssessment, RemoteException {
+    public void submitAssessment(int token, int studentid, Assessment completed) throws
+            UnauthorizedAccess, NoMatchingAssessment, RemoteException {
 
         // TBD: You need to implement this method!
     }

@@ -1,4 +1,4 @@
-package com.company;
+package com.company.client;
 
 public class UnauthorizedAccess extends Exception {
 
