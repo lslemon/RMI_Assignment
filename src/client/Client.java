@@ -27,7 +27,7 @@ public class Client
             System.out.println("Instantiating Exam Engine");
 
             Scanner scanner = new Scanner(System.in);
-            Registry registry = LocateRegistry.getRegistry(null);
+            Registry registry = LocateRegistry.getRegistry(20345);
 
             ExamServer engine = (ExamServer) registry.lookup("ExamServer");
 
