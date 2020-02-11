@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17beda72-517e-4fd1-a803-476846260528" name="Default Changelist" comment="Deleted Main Class created by IntelliJ">
-      <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,13 +30,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Client" />
+      <option name="MAIN_CLASS_NAME" value="client.Client" />
       <module name="RMI_Assessment_System" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.*" />
+          <option name="PATTERN" value="client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -44,23 +44,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.ExamEngine" />
-      <module name="RMI_Assessment_System" />
-      <option name="PROGRAM_PARAMETERS" value="-Djava.rmi.server.codebase=file:/Users/lukes/IdeaProjects/RMI_Assessment_System/ -Djava.rmi.server.hostname=localhost -Djava.security.policy=file:/Users/lukes/IdeaProjects/RMI_Assessment_System/src/com/company/server.policy" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Client" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
@@ -99,10 +84,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Deleted Main Class created by IntelliJ" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-12" y="75" width="923" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581170190902">
+    <state x="-12" y="75" width="923" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581451671735">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-12" y="75" width="923" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581170190902" />
+    <state x="-12" y="75" width="923" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581451671735" />
     <state x="9" y="388" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1581169915128">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -123,22 +108,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="562" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581448807584" />
-    <state width="914" height="278" key="GridCell.Tab.0.bottom" timestamp="1581368285817">
+    <state width="914" height="278" key="GridCell.Tab.0.bottom" timestamp="1581451678978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581368285817" />
-    <state width="914" height="278" key="GridCell.Tab.0.center" timestamp="1581368285816">
+    <state width="914" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581451678978" />
+    <state width="914" height="278" key="GridCell.Tab.0.center" timestamp="1581451678978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581368285816" />
-    <state width="914" height="278" key="GridCell.Tab.0.left" timestamp="1581368285816">
+    <state width="914" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581451678978" />
+    <state width="914" height="278" key="GridCell.Tab.0.left" timestamp="1581451678977">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581368285816" />
-    <state width="914" height="278" key="GridCell.Tab.0.right" timestamp="1581368285816">
+    <state width="914" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581451678977" />
+    <state width="914" height="278" key="GridCell.Tab.0.right" timestamp="1581451678978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581368285816" />
+    <state width="914" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581451678978" />
     <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1580993577653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

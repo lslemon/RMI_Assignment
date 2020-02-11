@@ -27,9 +27,9 @@ public class Client
             System.out.println("Instantiating Exam Engine");
 
             Scanner scanner = new Scanner(System.in);
-            Registry registry = LocateRegistry.getRegistry(20345);
-
-            ExamServer engine = (ExamServer) registry.lookup("ExamServer");
+//            Registry registry = LocateRegistry.getRegistry(20345);
+//
+//            ExamServer engine = (ExamServer) registry.lookup("ExamServer");
 
             Log_in login = new Log_in();
             JFrame frame = new JFrame("NUIG Assessments");
@@ -63,22 +63,22 @@ public class Client
             }
             System.out.println("Enter your password");
             password = scanner.nextLine();
-            int token = engine.login(studentId, password);
-
-            List<String> assessment_details = engine.getAvailableSummary(token, studentId);
-
-            for(String details : assessment_details)
-            {
-                System.out.println(details+"\n");
-            }
-
-            System.out.println("Choose an assessment using the correct course code");
-            String course_code = scanner.nextLine();
-
-            Assessment assessment = engine.getAssessment(token, studentId, course_code);
-
-            System.out.println(assessment.getInformation());
-            System.out.println(assessment.getClosingDate().toString());
+//            int token = engine.login(studentId, password);
+//
+//            List<String> assessment_details = engine.getAvailableSummary(token, studentId);
+//
+//            for(String details : assessment_details)
+//            {
+//                System.out.println(details+"\n");
+//            }
+//
+//            System.out.println("Choose an assessment using the correct course code");
+//            String course_code = scanner.nextLine();
+//
+//            Assessment assessment = engine.getAssessment(token, studentId, course_code);
+//
+//            System.out.println(assessment.getInformation());
+//            System.out.println(assessment.getClosingDate().toString());
 
         } catch(Exception e)
         {
