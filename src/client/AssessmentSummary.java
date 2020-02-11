@@ -59,6 +59,8 @@ public class AssessmentSummary
 
         jList = new JList(assessmentSummary.toArray());
         jList.setLayoutOrientation(JList.VERTICAL);
+        jList.addListSelectionListener(listSelectionListener);
+
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
         rootPanel.add(welcomeLabel);
