@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17beda72-517e-4fd1-a803-476846260528" name="Default Changelist" comment="Deleted Main Class created by IntelliJ">
-      <change beforePath="$PROJECT_DIR$/src/com/company/assessment/Assessment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/assessment/Assessment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/assessment/ExamServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/assessment/ExamServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/assessment/InvalidQuestionNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/assessment/InvalidQuestionNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/assessment/NoMatchingAssessment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/assessment/NoMatchingAssessment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/assessment/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/assessment/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/client/Log_in.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/client/Log_in.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/client/UnauthorizedAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/client/UnauthorizedAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/engine/ExamEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/engine/ExamEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
