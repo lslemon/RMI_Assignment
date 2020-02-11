@@ -1,10 +1,10 @@
 
-package com.company.engine;
+package engine;
 
-import com.company.assessment.Assessment;
-import com.company.assessment.ExamServer;
-import com.company.assessment.NoMatchingAssessment;
-import com.company.client.UnauthorizedAccess;
+import assessment.Assessment;
+import assessment.ExamServer;
+import assessment.NoMatchingAssessment;
+import client.UnauthorizedAccess;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;

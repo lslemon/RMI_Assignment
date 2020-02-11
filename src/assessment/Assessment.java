@@ -1,6 +1,6 @@
 // Assessment.java 
 
-package com.company.assessment;
+package assessment;
 
 import java.util.Date;
 import java.util.List;

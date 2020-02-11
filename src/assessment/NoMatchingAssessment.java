@@ -1,4 +1,4 @@
-package com.company.assessment;
+package assessment;
 
 public class NoMatchingAssessment extends Exception {
 
