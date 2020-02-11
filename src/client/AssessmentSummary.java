@@ -38,6 +38,7 @@ public class AssessmentSummary
         public void onPasswordEntered(String text);
     }
 
+    //TODO Handle double click in JList
     public AssessmentSummary(ExamServer examServer, int token, int studentId)
     {
         this.token = token;

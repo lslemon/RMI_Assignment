@@ -90,6 +90,8 @@ public class Log_in
             {
                 System.out.println("Received text field event");
 //                listener.onStudentIdEntered(e.getActionCommand());
+                String str = e.getActionCommand();
+                //TODO Handle Inappropriate data entries
                 studentId = new Integer(e.getActionCommand());
             }
 
