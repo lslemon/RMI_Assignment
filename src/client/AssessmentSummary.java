@@ -19,6 +19,7 @@ public class AssessmentSummary
     private JPanel loginPanel;
     private JLabel welcomeLabel;
     private JLabel notificationLabel;
+    private JList jList;
 
     private List<String> assessmentSummary = new LinkedList<String>();
 
@@ -54,12 +55,15 @@ public class AssessmentSummary
         welcomeLabel = new JLabel("Welcome Student " + studentId);
         notificationLabel = new JLabel("You have "+assessmentSummary.size()+" Assessments waiting for completion");
 
+        jList = new JList(assessmentSummary.toArray());
+        jList.setLayoutOrientation(JList.VERTICAL);
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
         rootPanel.add(welcomeLabel);
         rootPanel.add(notificationLabel);
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
 
+        rootPanel.add(jList);
 
     }
 

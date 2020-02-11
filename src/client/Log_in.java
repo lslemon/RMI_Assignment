@@ -102,6 +102,11 @@ public class Log_in
                     return;
                 }
 
+                if(!(studentId instanceof Integer))
+                {
+                    rootPanel.add(new JLabel("Student ID must be numerical"));
+                    return;
+                }
 
                 listener.onLoginInfoEntered(password, studentId);
 
