@@ -27,42 +27,42 @@ public class Client
             System.out.println("Instantiating Exam Engine");
 
             Scanner scanner = new Scanner(System.in);
-//            Registry registry = LocateRegistry.getRegistry(20345);
-//
-//            ExamServer engine = (ExamServer) registry.lookup("ExamServer");
+            Registry registry = LocateRegistry.getRegistry(20345);
 
-            Log_in login = new Log_in();
+            ExamServer engine = (ExamServer) registry.lookup("ExamServer");
+
+            Log_in login = new Log_in(engine);
             JFrame frame = new JFrame("NUIG Assessments");
             frame.setContentPane(login.getRootPanel());
             frame.setVisible(true);
-            frame.setSize(700, 1200);
-            login.setPanelListener(new Log_in.PanelListener() {
-                @Override
-                public void onStudentIdEntered(String text)
-                {
-//                    studentId = new Integer(text);
-                }
+            frame.setSize(700, 600);
+//            login.setPanelListener(new Log_in.PanelListener() {
+//                @Override
+//                public void onStudentIdEntered(String text)
+//                {
+////                    studentId = new Integer(text);
+//                }
+//
+//                @Override
+//                public void onPasswordEntered(String text)
+//                {
+////                    password = text;
+//                }
+//            });
 
-                @Override
-                public void onPasswordEntered(String text)
-                {
-//                    password = text;
-                }
-            });
-
-            System.out.println("Enter Student ID");
-            studentId = 0;
-            try
-            {
-                studentId = scanner.nextInt();
-            }
-            catch (InputMismatchException e)
-            {
-                System.out.println("Student Id must be comprised of digits 0-9");
-                studentId = scanner.nextInt();
-            }
-            System.out.println("Enter your password");
-            password = scanner.nextLine();
+//            System.out.println("Enter Student ID");
+//            studentId = 0;
+//            try
+//            {
+//                studentId = scanner.nextInt();
+//            }
+//            catch (InputMismatchException e)
+//            {
+//                System.out.println("Student Id must be comprised of digits 0-9");
+//                studentId = scanner.nextInt();
+//            }
+//            System.out.println("Enter your password");
+//            password = scanner.nextLine();
 //            int token = engine.login(studentId, password);
 //
 //            List<String> assessment_details = engine.getAvailableSummary(token, studentId);
