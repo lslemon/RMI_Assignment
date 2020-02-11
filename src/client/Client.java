@@ -1,5 +1,8 @@
 package client;
 
+import assessment.Assessment;
+import assessment.ExamServer;
+
 import javax.swing.*;
 import java.awt.*;
 import java.rmi.registry.LocateRegistry;
@@ -24,10 +27,10 @@ public class Client
             System.out.println("Instantiating Exam Engine");
 
             Scanner scanner = new Scanner(System.in);
-//            Registry registry = LocateRegistry.getRegistry(null);
-//
-//            ExamServer engine = (ExamServer) registry.lookup("ExamServer");
-//
+            Registry registry = LocateRegistry.getRegistry(null);
+
+            ExamServer engine = (ExamServer) registry.lookup("ExamServer");
+
             Log_in login = new Log_in();
             JFrame frame = new JFrame("NUIG Assessments");
             frame.setContentPane(login.getRootPanel());
@@ -47,35 +50,35 @@ public class Client
                 }
             });
 
-//            System.out.println("Enter Student ID");
-//            studentId = 0;
-//            try
-//            {
-//                studentId = scanner.nextInt();
-//            }
-//            catch (InputMismatchException e)
-//            {
-//                System.out.println("Student Id must be comprised of digits 0-9");
-//                studentId = scanner.nextInt();
-//            }
-//            System.out.println("Enter your password");
-//            String password = scanner.nextLine();
-//            int token = engine.login(studentId, password);
-//
-//            List<String> assessment_details = engine.getAvailableSummary(token, studentId);
-//
-//            for(String details : assessment_details)
-//            {
-//                System.out.println(details+"\n");
-//            }
-//
-//            System.out.println("Choose an assessment using the correct course code");
-//            String course_code = scanner.nextLine();
-//
-//            Assessment assessment = engine.getAssessment(token, studentId, course_code);
+            System.out.println("Enter Student ID");
+            studentId = 0;
+            try
+            {
+                studentId = scanner.nextInt();
+            }
+            catch (InputMismatchException e)
+            {
+                System.out.println("Student Id must be comprised of digits 0-9");
+                studentId = scanner.nextInt();
+            }
+            System.out.println("Enter your password");
+            password = scanner.nextLine();
+            int token = engine.login(studentId, password);
 
-//            System.out.println(assessment.getInformation());
-//            System.out.println(assessment.getClosingDate().toString());
+            List<String> assessment_details = engine.getAvailableSummary(token, studentId);
+
+            for(String details : assessment_details)
+            {
+                System.out.println(details+"\n");
+            }
+
+            System.out.println("Choose an assessment using the correct course code");
+            String course_code = scanner.nextLine();
+
+            Assessment assessment = engine.getAssessment(token, studentId, course_code);
+
+            System.out.println(assessment.getInformation());
+            System.out.println(assessment.getClosingDate().toString());
 
         } catch(Exception e)
         {
