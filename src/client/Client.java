@@ -5,6 +5,7 @@ import assessment.ExamServer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.InputMismatchException;
@@ -14,13 +15,17 @@ import java.util.function.LongFunction;
 
 public class Client
 {
-    private Client(){}
+    private static int studentId;
+    private static String password;
+    private static int counter = 0;
 
-    public static void main(String[] args)
+    private Client()
     {
-        int studentId;
-        String password;
+        startClient();
+    }
 
+    private void startClient()
+    {
         try
         {
             System.out.print("....Booting up");
@@ -31,24 +36,55 @@ public class Client
 
             ExamServer engine = (ExamServer) registry.lookup("ExamServer");
 
-            Log_in login = new Log_in(engine);
+            Log_in login = new Log_in(null);
             JFrame frame = new JFrame("NUIG Assessments");
             frame.setContentPane(login.getRootPanel());
             frame.setVisible(true);
             frame.setSize(700, 600);
-//            login.setPanelListener(new Log_in.PanelListener() {
-//                @Override
-//                public void onStudentIdEntered(String text)
-//                {
-////                    studentId = new Integer(text);
-//                }
-//
-//                @Override
-//                public void onPasswordEntered(String text)
-//                {
-////                    password = text;
-//                }
-//            });
+            login.setPanelListener(new Log_in.PanelListener() {
+                @Override
+                public void onStudentIdEntered(String text)
+                {
+                    counter++;
+                    studentId = new Integer(text);
+                    if(counter == 2)
+                    {
+                        counter =0;
+                        System.out.println("Log in");
+                        AssessmentSummary assessmentSummary = new AssessmentSummary(null, studentId, 1);
+                        frame.setContentPane(assessmentSummary.getRootPanel());
+                    }
+                }
+
+                @Override
+                public void onPasswordEntered(String text)
+                {
+                    counter++;
+                    password = text;
+                    if(counter == 2)
+                    {
+                        counter =0;
+                        System.out.println("Log in");
+                    }
+                }
+
+                @Override
+                public void onLoginInfoEntered(String password, Integer studentId)
+                {
+                    System.out.println("Log on");
+                    int token = 0;
+                    try {
+                        token = engine.login(studentId, password);
+                    } catch (UnauthorizedAccess unauthorizedAccess) {
+                        unauthorizedAccess.printStackTrace();
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                    AssessmentSummary assessmentSummary = new AssessmentSummary(engine, token, studentId);
+                    frame.setContentPane(assessmentSummary.getRootPanel());
+                    frame.setVisible(true);
+                }
+            });
 
 //            System.out.println("Enter Student ID");
 //            studentId = 0;
@@ -85,5 +121,10 @@ public class Client
             System.err.println("Client exception: " + e.toString());
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args)
+    {
+        Client client = new Client();
     }
 }

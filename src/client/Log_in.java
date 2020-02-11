@@ -19,17 +19,19 @@ public class Log_in
     private JLabel passwordLabel = new JLabel("Password");
     private JPasswordField passwordField;
     private JTextField studentIdField;
+    private JButton logInButton;
     private PanelListener listener;
     private ExamServer examServer;
     private int counter;
 
     private String password;
-    private int studentId;
+    private Integer studentId;
 
     public interface PanelListener
     {
         public void onStudentIdEntered(String text);
         public void onPasswordEntered(String text);
+        public void onLoginInfoEntered(String password, Integer studentId);
     }
 
     public Log_in(ExamServer examServer)
@@ -47,19 +49,21 @@ public class Log_in
 
         passwordField = new JPasswordField();
         passwordField.setSize(200, 50);
-        passwordField.addActionListener(textChangeListener);
+        passwordField.addActionListener(actionListener);
         studentIdField = new JTextField();
         studentIdField.setSize(200, 50);
-        studentIdField.addActionListener(textChangeListener);
+        studentIdField.addActionListener(actionListener);
 
         loginPanel.add(studentIDLabel);
         loginPanel.add(studentIdField);
         loginPanel.add(passwordLabel);
         loginPanel.add(passwordField);
 
+        logInButton = new JButton("Log In");
+        logInButton.addActionListener(actionListener);
+        loginPanel.add(logInButton);
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
         rootPanel.add(loginPanel);
-
     }
 
     public void setPanelListener(PanelListener listener)
@@ -71,31 +75,36 @@ public class Log_in
         return rootPanel;
     }
 
-    private ActionListener textChangeListener = new ActionListener() {
+    private ActionListener actionListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e)
         {
             if(e.getSource() == passwordField)
             {
-                counter++;
+                System.out.println("Received password field event");
+//                listener.onPasswordEntered(e.getActionCommand());
                 password = e.getActionCommand();
             }
 
             if(e.getSource() == studentIdField)
             {
-                counter++;
+                System.out.println("Received text field event");
+//                listener.onStudentIdEntered(e.getActionCommand());
                 studentId = new Integer(e.getActionCommand());
             }
 
-            if(counter == 2)
+            if(e.getSource() == logInButton)
             {
-                try {
-                     System.out.println(examServer.login(studentId, password));
-                } catch (UnauthorizedAccess unauthorizedAccess) {
-                    unauthorizedAccess.printStackTrace();
-                } catch (RemoteException ex) {
-                    ex.printStackTrace();
+                System.out.println("Pressed");
+                if(studentId == null || password == null)
+                {
+                    rootPanel.add(new JLabel("Missing username or password"));
+                    return;
                 }
+
+
+                listener.onLoginInfoEntered(password, studentId);
+
             }
         }
     };
