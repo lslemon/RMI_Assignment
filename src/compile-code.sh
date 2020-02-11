@@ -1,3 +1,3 @@
-javac Engine/*.java
-javac Assessment/*.java
-javac Client/*.java
+javac engine/*.java
+javac assessment/*.java
+javac client/*.java
