@@ -37,7 +37,10 @@ public class ExamEngine implements ExamServer {
 
         // TBD: You need to implement this method!
         // For the moment method just returns an empty or null value to allow it to compile
-        return null;
+        List<String> list = new LinkedList<>();
+        list.add("Assignment1");
+        list.add("Assignment2");
+        return list;
     }
 
     // Return an Assessment object associated with a particular course code
