@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17beda72-517e-4fd1-a803-476846260528" name="Default Changelist" comment="Deleted Main Class created by IntelliJ" />
+    <list default="true" id="17beda72-517e-4fd1-a803-476846260528" name="Default Changelist" comment="Deleted Main Class created by IntelliJ">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Log_in.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Log_in.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Log_in.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Log_in.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +30,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
   </component>
   <component name="RunManager">
@@ -107,22 +111,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="562" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581448807584" />
-    <state width="914" height="278" key="GridCell.Tab.0.bottom" timestamp="1581451960571">
+    <state width="914" height="278" key="GridCell.Tab.0.bottom" timestamp="1581453670432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581451960571" />
-    <state width="914" height="278" key="GridCell.Tab.0.center" timestamp="1581451960571">
+    <state width="914" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581453670432" />
+    <state width="914" height="278" key="GridCell.Tab.0.center" timestamp="1581453670431">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581451960571" />
-    <state width="914" height="278" key="GridCell.Tab.0.left" timestamp="1581451960571">
+    <state width="914" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581453670431" />
+    <state width="914" height="278" key="GridCell.Tab.0.left" timestamp="1581453670431">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581451960571" />
-    <state width="914" height="278" key="GridCell.Tab.0.right" timestamp="1581451960571">
+    <state width="914" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581453670431" />
+    <state width="914" height="278" key="GridCell.Tab.0.right" timestamp="1581453670432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581451960571" />
+    <state width="914" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581453670432" />
     <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1580993577653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -135,5 +139,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="250" y="405" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581162044316" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1581453662434">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1581453662434" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1581453491898">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581453491898" />
   </component>
 </project>
