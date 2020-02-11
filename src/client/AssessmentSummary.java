@@ -5,6 +5,8 @@ import assessment.NoMatchingAssessment;
 import engine.ExamEngine;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -64,12 +66,18 @@ public class AssessmentSummary
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
 
         rootPanel.add(jList);
-
     }
 
     public JPanel getRootPanel() {
         return rootPanel;
     }
+
+    private ListSelectionListener listSelectionListener = new ListSelectionListener() {
+        @Override
+        public void valueChanged(ListSelectionEvent e) {
+            System.out.println((String)jList.getSelectedValue());
+        }
+    };
 
     private ActionListener actionListener = new ActionListener() {
         @Override
