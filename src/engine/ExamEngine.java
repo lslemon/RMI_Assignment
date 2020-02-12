@@ -2,6 +2,7 @@
 package engine;
 
 import assessment.Assessment;
+import assessment.AssessmentObject;
 import assessment.ExamServer;
 import assessment.NoMatchingAssessment;
 import client.UnauthorizedAccess;
@@ -29,6 +30,7 @@ public class ExamEngine implements ExamServer {
         super();
         whitelist.put(100,"password");
         whitelist.put(200,"password");
+        assessments.add(new AssessmentObject("First Assessment", new Date(), 1));
     }
 
     // Implement the methods defined in the ExamServer interface...
@@ -132,7 +134,7 @@ public class ExamEngine implements ExamServer {
             ExamServer engine = new ExamEngine();
             ExamServer stub =
                     (ExamServer) UnicastRemoteObject.exportObject(engine, 0);
-            Registry registry = LocateRegistry.getRegistry();
+            Registry registry = LocateRegistry.getRegistry(20345);
             registry.rebind(name, stub);
             System.out.println("ExamEngine bound");
         } catch (Exception e) {

@@ -18,6 +18,9 @@ public class AssessmentObject implements Assessment {
         this.info = information;
         this.close_date = closing_date;
         this.student_id = id;
+
+        questions.add(new QuestionObj(1, "Who is cooler", new String[]{"SAM", "LUKE"}));
+        questions.add(new QuestionObj(2, "Why", new String[]{"HAIR", "SMARTS"}));
     }
 
     // Return information about the assessment	
