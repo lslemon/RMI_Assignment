@@ -38,7 +38,7 @@ public class ExamEngine implements ExamServer {
     public int login(int studentid, String password) throws UnauthorizedAccess, RemoteException
     {
         int token = 0;
-        if(whitelist.containsKey(100) && whitelist.get(100) == password)
+        if(whitelist.containsKey(studentid) && whitelist.get(studentid) == password)
         {
             boolean unique = false;
             while(unique == false)
@@ -47,12 +47,13 @@ public class ExamEngine implements ExamServer {
                 if(!tokens.containsKey(token))
                 {
                     tokens.put(token, new Date());
+                    unique = true;
                 }
             }
         }
         else
         {
-            throw new UnauthorizedAccess("");
+            throw new UnauthorizedAccess("Log in details are incorrect");
         }
         return token;
     }
