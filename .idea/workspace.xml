@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17beda72-517e-4fd1-a803-476846260528" name="Default Changelist" comment="Deleted Main Class created by IntelliJ">
-      <change afterPath="$PROJECT_DIR$/src/engine/UnauthorizedAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assessment/Assessment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assessment/Assessment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assessment/AssessmentObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assessment/AssessmentObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assessment/ExamServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assessment/ExamServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assessment/InvalidOptionNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assessment/InvalidOptionNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assessment/InvalidQuestionNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assessment/InvalidQuestionNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assessment/NoMatchingAssessment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assessment/NoMatchingAssessment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assessment/QuestionObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assessment/QuestionObj.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/AssessmentSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/AssessmentSummary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/UnauthorizedAccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/ExamEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/ExamEngine.java" afterDir="false" />
-    </list>
+    <list default="true" id="17beda72-517e-4fd1-a803-476846260528" name="Default Changelist" comment="Deleted Main Class created by IntelliJ" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,10 +140,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="250" y="405" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581162044316" />
-    <state x="955" y="0" width="972" height="1047" key="dock-window-1" timestamp="1581603352758">
+    <state x="955" y="0" width="972" height="1047" key="dock-window-1" timestamp="1581604636115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="955" y="0" width="972" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1581603352758" />
+    <state x="955" y="0" width="972" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1581604636115" />
     <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1581453491898">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -168,7 +154,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/engine/ExamEngine.java</url>
-          <line>45</line>
+          <line>47</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
