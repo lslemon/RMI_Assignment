@@ -50,6 +50,7 @@ public class AssessmentObject implements Assessment {
         {
             throw new InvalidQuestionNumber("Invalid Question Number");
         }
+
         return questions.get(questionNumber);
     }
 

@@ -89,7 +89,8 @@ public class AssessmentSummary
                 } catch (NoMatchingAssessment | RemoteException ex) {
                     ex.printStackTrace();
                 }
-                System.out.println(assessment.getSelectedAnswer(0));
+                
+                System.out.println(assessment.getQuestions().size());
             }
         }
     };
