@@ -1,5 +1,6 @@
 package client;
 
+import assessment.Assessment;
 import assessment.ExamServer;
 
 import javax.swing.*;
@@ -36,7 +37,7 @@ public class Client
             frame.setContentPane(login.getRootPanel());
             frame.setVisible(true);
             frame.setSize(700, 600);
-            login.setPanelListener(new Log_in.PanelListener() {
+            login.setPanelListener(new Log_in.LogInListener() {
                 @Override
                 public void onStudentIdEntered(String text)
                 {
@@ -80,6 +81,17 @@ public class Client
                     AssessmentSummary assessmentSummary = new AssessmentSummary(engine, token, studentId);
                     frame.setContentPane(assessmentSummary.getRootPanel());
                     frame.setVisible(true);
+                    int finalToken = token;
+                    assessmentSummary.setListener(new AssessmentSummary.SummaryListener() {
+
+                        @Override
+                        public void onAssessmentChosen(Assessment assessment) {
+                            AssessmentQuestions assessmentQuestions =
+                                    new AssessmentQuestions(engine, finalToken, studentId, assessment);
+                            frame.setContentPane(assessmentQuestions.getRootPanel());
+                            frame.setVisible(true);
+                        }
+                    });
                 }
             });
 

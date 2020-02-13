@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17beda72-517e-4fd1-a803-476846260528" name="Default Changelist" comment="Deleted Main Class created by IntelliJ">
-      <change beforePath="$PROJECT_DIR$/src/assessment/AssessmentObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assessment/AssessmentObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/AssessmentQuestions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/AssessmentSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/AssessmentSummary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Log_in.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Log_in.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,10 +102,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="9" y="388" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581169915128" />
-    <state x="285" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1581615593428">
+    <state x="285" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1581618008609">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="285" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581615593428" />
+    <state x="285" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581618008609" />
     <state x="275" y="308" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1580993729174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

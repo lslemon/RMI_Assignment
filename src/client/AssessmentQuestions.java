@@ -14,44 +14,40 @@ import java.rmi.RemoteException;
 import java.util.*;
 import java.util.List;
 
-public class AssessmentSummary
+public class AssessmentQuestions
 {
     private JPanel rootPanel;
     private JLabel welcomeLabel;
     private JLabel notificationLabel;
     private JList jList;
 
-    private List<String> assessmentSummary = new LinkedList<>();
-
-    private SummaryListener listener;
+    private PanelListener listener;
     private ExamServer examServer;
     private int counter;
+    private Assessment assessment;
 
     private int studentId;
     private int token;
 
-    public interface SummaryListener
+    public interface PanelListener
     {
-        public void onAssessmentChosen(Assessment assessment);
+        public void onStudentIdEntered(String text);
+        public void onPasswordEntered(String text);
     }
 
     //TODO Handle double click in JList
-    public AssessmentSummary(ExamServer examServer, int token, int studentId)
+    public AssessmentQuestions(ExamServer examServer, int token, int studentId, Assessment assessment)
     {
+        this.assessment = assessment;
         this.token = token;
         this.studentId = studentId;
         this.examServer = examServer;
 
-        try {
-            assessmentSummary = examServer.getAvailableSummary(token, studentId);
-        } catch (RemoteException | UnauthorizedAccess | NoMatchingAssessment e) {
-            e.printStackTrace();
-        }
+
 
         welcomeLabel = new JLabel("Welcome Student " + studentId);
-        notificationLabel = new JLabel("You have "+assessmentSummary.size()+" Assessments waiting for completion");
 
-        jList = new JList(assessmentSummary.toArray());
+        jList = new JList(assessment.getQuestions().toArray());
         jList.setLayoutOrientation(JList.VERTICAL);
         jList.addListSelectionListener(listSelectionListener);
 
@@ -62,10 +58,6 @@ public class AssessmentSummary
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
 
         rootPanel.add(jList);
-    }
-
-    public void setListener(SummaryListener listener) {
-        this.listener = listener;
     }
 
     public JPanel getRootPanel() {
@@ -92,6 +84,7 @@ public class AssessmentSummary
                 } catch (NoMatchingAssessment | RemoteException ex) {
                     ex.printStackTrace();
                 }
+
                 System.out.println(assessment.getQuestions().size());
             }
         }

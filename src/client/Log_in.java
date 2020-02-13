@@ -22,14 +22,14 @@ public class Log_in
     private JPasswordField passwordField;
     private JTextField studentIdField;
     private JButton logInButton;
-    private PanelListener listener;
+    private LogInListener listener;
     private ExamServer examServer;
     private int counter;
 
     private String password;
     private Integer studentId;
 
-    public interface PanelListener
+    public interface LogInListener
     {
         public void onStudentIdEntered(String text);
         public void onPasswordEntered(String text);
@@ -70,7 +70,7 @@ public class Log_in
         rootPanel.add(loginPanel);
     }
 
-    public void setPanelListener(PanelListener listener)
+    public void setPanelListener(LogInListener listener)
     {
         this.listener = listener;
     }
