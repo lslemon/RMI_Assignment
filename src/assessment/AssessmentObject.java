@@ -1,6 +1,8 @@
 package assessment;
 // AssessmentObject.java 
 
+import engine.QuestionObj;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,6 +23,8 @@ public class AssessmentObject implements Assessment {
         this.close_date = closing_date;
         this.student_id = id;
         this.course_id = course_code;
+        questions.add(new QuestionObj(0,"Who's cooler?", new String[]{"SAM", "Luke"}));
+        questions.add(new QuestionObj(1, "Why?", new String[]{"Hair", "Humour"}));
     }
 
     // Return information about the assessment	

@@ -31,7 +31,7 @@ public class ExamEngine implements ExamServer {
         super();
         whitelist.put(100,"password");
         whitelist.put(200,"password");
-        assessments.add((Assessment)new AssessmentObject("Info", new Date(), 100, 123));
+        assessments.add((Assessment)new AssessmentObject("Assessment deciding who is cooler!", new Date(), 100, 123));
     }
 
     // Implement the methods defined in the ExamServer interface...
