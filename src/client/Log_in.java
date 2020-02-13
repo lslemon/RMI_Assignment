@@ -51,10 +51,12 @@ public class Log_in
 
         passwordField = new JPasswordField();
         passwordField.setSize(200, 50);
-        passwordField.addActionListener(actionListener);
+//        passwordField.addActionListener(actionListener);
+        passwordField.addFocusListener(focusListener);
         studentIdField = new JTextField();
         studentIdField.setSize(200, 50);
-        studentIdField.addActionListener(actionListener);
+//        studentIdField.addActionListener(actionListener);
+        studentIdField.addFocusListener(focusListener);
 
         loginPanel.add(studentIDLabel);
         loginPanel.add(studentIdField);
