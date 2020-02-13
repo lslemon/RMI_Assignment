@@ -1,26 +1,30 @@
+package engine;
 // AssessmentObject.java 
-package assessment;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import engine.Assessment;
+import engine.InvalidOptionNumber;
+import engine.InvalidQuestionNumber;
+import engine.Question;
 
 public class AssessmentObject implements Assessment {
     
     private Date close_date;
     private String info;
     private int student_id;
-    private String course_code;
+    private int course_id;
     private int mcq_question_num;
     private List<Question> questions = new ArrayList<Question>();
-    private List<Integer> answers = new LinkedList<Integer>();
+    private List<Integer> answers = new ArrayList<Integer>();
 
-    public AssessmentObject(String information, Date closing_date, int id)
+    public AssessmentObject(String information, Date closing_date, int id, int course_code)
     {
         this.info = information;
         this.close_date = closing_date;
         this.student_id = id;
-
-        questions.add(new QuestionObj(1, "Who is cooler", new String[]{"SAM", "LUKE"}));
-        questions.add(new QuestionObj(2, "Why", new String[]{"HAIR", "SMARTS"}));
+        this.course_id = course_code;
     }
 
     // Return information about the assessment	
@@ -44,9 +48,9 @@ public class AssessmentObject implements Assessment {
 	// Return one question only with answer options
 	public Question getQuestion(int questionNumber) throws InvalidQuestionNumber
     {   
-        if(questions.size()-1 > questionNumber)
+        if(questions.size()-1 > questionNumber || questionNumber <= 0)
         {
-            throw new InvalidQuestionNumber();
+            throw new InvalidQuestionNumber("Invalid Question Number");
         }
         return questions.get(questionNumber);
     }
@@ -62,12 +66,12 @@ public class AssessmentObject implements Assessment {
             }
             else
             {
-                throw new InvalidOptionNumber();
+            	throw new InvalidOptionNumber("Invalid Option Number");
             }
         }
         else
         {
-            throw new InvalidQuestionNumber();
+        	 throw new InvalidQuestionNumber("Invalid Question Number");
         }
 
     }
@@ -78,11 +82,16 @@ public class AssessmentObject implements Assessment {
         return answers.get(questionNumber);
     }
 
-	// Return studentid associated with this assessment object
-	// This will be preset on the server before object is downloaded
+	// Return student id associated with this assessment object
+	// This will be preset on the server before object is download
     public int getAssociatedID()
     {
         return this.student_id;
     }
+
+	@Override
+	public int getAssociatedCourseCode() {
+		return this.course_id;
+	}
 
 }

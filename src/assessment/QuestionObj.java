@@ -1,9 +1,9 @@
+package engine;
 // Question.java
 
-package assessment;
-
-public class QuestionObj implements Question
+public class QuestionObj implements Question 
 {	
+	private static final long serialVersionUID = 1L;
 	private int number;
 	private String details;
 	private String[] options = new String[200];

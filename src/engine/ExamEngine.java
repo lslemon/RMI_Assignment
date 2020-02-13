@@ -1,44 +1,45 @@
-
 package engine;
 
-import assessment.Assessment;
-import assessment.AssessmentObject;
-import assessment.ExamServer;
-import assessment.NoMatchingAssessment;
-import client.UnauthorizedAccess;
 
 import java.rmi.RemoteException;
+
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
+import engine.ExamServer;
+import engine.AssessmentObject;
+import engine.UnauthorizedAccess;
+import engine.NoMatchingAssessment;
 
 public class ExamEngine implements ExamServer {
 
     private int max_session_time_min = 15;
-    private List<String> avail_summaries = new ArrayList<>();
     private Map<Integer, String> whitelist = new HashMap<Integer, String>();
     private Map<Integer, Date> tokens = new HashMap<Integer, Date>();
     private List<Assessment> assessments = new ArrayList<>();
 
-
-
     // Constructor is required
-    public ExamEngine()
+    public ExamEngine() 
     {
         super();
         whitelist.put(100,"password");
         whitelist.put(200,"password");
-        assessments.add(new AssessmentObject("First Assessment", new Date(), 100));
+        assessments.add((Assessment)new AssessmentObject("Info", new Date(), 200, 123));
     }
 
     // Implement the methods defined in the ExamServer interface...
     // Return an access token that allows access to the server for some time period
-    public int login(int studentid, String password) throws UnauthorizedAccess, RemoteException
+    public int login(int studentid, String password) throws UnauthorizedAccess, RemoteException 
     {
-        int token = 0;
-        if(whitelist.containsKey(studentid) && whitelist.get(studentid) == password)
+    	int token = 0;
+        if(whitelist.containsKey(100) && whitelist.get(100) == password)
         {
             boolean unique = false;
             while(unique == false)
@@ -47,23 +48,23 @@ public class ExamEngine implements ExamServer {
                 if(!tokens.containsKey(token))
                 {
                     tokens.put(token, new Date());
-                    unique = true;
+                    return token;	
                 }
             }
         }
         else
         {
-            throw new UnauthorizedAccess("Log in details are incorrect");
+            throw new UnauthorizedAccess("");
         }
-        return token;
+        return 0;
     }
 
     // Return a summary list of Assessments currently available for this studentid
-    public List<String> getAvailableSummary(int token, int studentid) throws UnauthorizedAccess, NoMatchingAssessment, RemoteException
+    public List<String> getAvailableSummary(int token, int studentid) throws UnauthorizedAccess, NoMatchingAssessment, RemoteException 
     {
         if(!checkToken(token))
         {
-            throw new UnauthorizedAccess("Incorrect Token");
+            throw new UnauthorizedAccess("Token has expired");
         }
 
         List<String> summaries = new ArrayList<String>();
@@ -77,48 +78,48 @@ public class ExamEngine implements ExamServer {
         }
         if(summaries.isEmpty())
         {
-            throw new NoMatchingAssessment("No Assessments ready");
+            throw new NoMatchingAssessment(String.format("No matching assessents for student id: %d", studentid));
         }
         return summaries;
     }
 
     // Return an Assessment object associated with a particular course code
-    public Assessment getAssessment(int token, int studentid, String courseCode)
-            throws UnauthorizedAccess, NoMatchingAssessment, RemoteException {
+    public Assessment getAssessment(int token, int studentid, String courseCode) 
+    throws UnauthorizedAccess, NoMatchingAssessment, RemoteException {
         if(!checkToken(token))
-        {
-            throw new UnauthorizedAccess("");
-        }
+            {
+        		throw new UnauthorizedAccess("Token has expired");
+            }
 
         for(Assessment cur_assess: assessments)
         {
-            if(cur_assess.getAssociatedID() == studentid && cur_assess.getInformation().contains(courseCode))
+            if(cur_assess.getAssociatedID() == studentid)
             {
                 return cur_assess;
             }
         }
-        throw new NoMatchingAssessment("");
+        throw new NoMatchingAssessment(String.format("No matching assessents for student id: %d", studentid));
     }
 
     /*Don't know why studentid is passed if you are giving me a completed Assessment object */
-    public void submitAssessment(int token, int studentid, Assessment completed) throws
-            UnauthorizedAccess, NoMatchingAssessment, RemoteException {
+    public void submitAssessment(int token, int studentid, Assessment completed) throws 
+                UnauthorizedAccess, NoMatchingAssessment, RemoteException {
         if(!checkToken(token))
         {
-            throw new UnauthorizedAccess("");
+        	throw new UnauthorizedAccess("Token has expired");
         }
         assessments.add(completed);
     }
 
     private boolean checkToken(int token) throws NoMatchingAssessment
-    {
+    {   
         Date current_time = new Date();
         if(tokens.containsKey(token))
         {
             Date start_time = tokens.get(token);
             long session_time = current_time.getTime() - start_time.getTime();
-            long session_time_sec = session_time / 1000 % 60;
-            if(session_time < 60*max_session_time_min)
+            long session_time_sec = session_time / 1000 % 60;  
+            if(session_time_sec < 60*max_session_time_min)
             {
                 return true;
             }
@@ -127,6 +128,13 @@ public class ExamEngine implements ExamServer {
     }
 
     public static void main(String[] args) {
+    	int registryport = 20345;
+
+        if (args.length > 0)
+           registryport = Integer.parseInt(args[0]);
+        
+        System.out.println("RMIRegistry port = " + registryport);
+
         if (System.getSecurityManager() == null) {
             System.setSecurityManager(new SecurityManager());
         }
@@ -134,8 +142,8 @@ public class ExamEngine implements ExamServer {
             String name = "ExamServer";
             ExamServer engine = new ExamEngine();
             ExamServer stub =
-                    (ExamServer) UnicastRemoteObject.exportObject(engine, 0);
-            Registry registry = LocateRegistry.getRegistry(20345);
+                (ExamServer) UnicastRemoteObject.exportObject(engine, 0);
+            Registry registry = LocateRegistry.getRegistry(registryport);
             registry.rebind(name, stub);
             System.out.println("ExamEngine bound");
         } catch (Exception e) {
