@@ -92,6 +92,7 @@ public class AssessmentSummary
                 } catch (NoMatchingAssessment | RemoteException ex) {
                     ex.printStackTrace();
                 }
+                listener.onAssessmentChosen(assessment);
                 System.out.println(assessment.getQuestions().size());
             }
         }
