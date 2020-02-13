@@ -1,5 +1,6 @@
 package client;
 
+import assessment.Assessment;
 import assessment.ExamServer;
 import assessment.NoMatchingAssessment;
 
@@ -10,7 +11,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
-import java.util.LinkedList;
+import java.util.*;
 import java.util.List;
 
 public class AssessmentSummary
@@ -20,7 +21,7 @@ public class AssessmentSummary
     private JLabel notificationLabel;
     private JList jList;
 
-    private List<String> assessmentSummary = new LinkedList<String>();
+    private List<String> assessmentSummary = new LinkedList<>();
 
     private PanelListener listener;
     private ExamServer examServer;
@@ -77,7 +78,18 @@ public class AssessmentSummary
             if(counter == 2)
             {
                 counter = 0;
-                System.out.println((String)jList.getSelectedValue());
+                String assessmentInfo = (String)jList.getSelectedValue();
+                System.out.println(assessmentInfo);
+                String courseCode = assessmentInfo.substring(assessmentInfo.length()-3);
+                Assessment assessment = null;
+                try {
+                    assessment = examServer.getAssessment(token, studentId, courseCode);
+                } catch (UnauthorizedAccess unauthorizedAccess) {
+                    unauthorizedAccess.printStackTrace();
+                } catch (NoMatchingAssessment | RemoteException ex) {
+                    ex.printStackTrace();
+                }
+                System.out.println(assessment.getSelectedAnswer(0));
             }
         }
     };

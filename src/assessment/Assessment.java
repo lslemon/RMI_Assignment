@@ -28,6 +28,9 @@ public interface Assessment extends Serializable {
 	// Return selected answer or zero if none selected yet
 	public int getSelectedAnswer(int questionNumber);
 
+	//Return Course ID associated with Assessment
+	public String getCourseID();
+
 	// Return studentid associated with this assessment object
 	// This will be preset on the server before object is downloaded
 	public int getAssociatedID();

@@ -7,6 +7,7 @@ import client.UnauthorizedAccess;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
+import java.util.Map;
 
 public interface ExamServer extends Remote {
 

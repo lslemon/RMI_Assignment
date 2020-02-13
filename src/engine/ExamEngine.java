@@ -11,12 +11,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class ExamEngine implements ExamServer {
 
@@ -31,7 +26,7 @@ public class ExamEngine implements ExamServer {
         super();
         whitelist.put(100,"password");
         whitelist.put(200,"password");
-        assessments.add((Assessment)new AssessmentObject("Assessment deciding who is cooler!", new Date(), 100, 123));
+        assessments.add((Assessment)new AssessmentObject("Assessment deciding who is cooler!\nCourse code: 123", new Date(), 100, "123"));
     }
 
     // Implement the methods defined in the ExamServer interface...
@@ -61,14 +56,14 @@ public class ExamEngine implements ExamServer {
     }
 
     // Return a summary list of Assessments currently available for this studentid
-    public List<String> getAvailableSummary(int token, int studentid) throws UnauthorizedAccess, NoMatchingAssessment, RemoteException
+    public List<String> getAvailableSummary(int token, int studentid) throws UnauthorizedAccess, NoMatchingAssessment
     {
         if(!checkToken(token))
         {
             throw new UnauthorizedAccess("Token has expired");
         }
 
-        List<String> summaries = new ArrayList<String>();
+        List<String> summaries = new LinkedList<>();
 
         for(Assessment cur_assess: assessments)
         {
@@ -86,7 +81,7 @@ public class ExamEngine implements ExamServer {
 
     // Return an Assessment object associated with a particular course code
     public Assessment getAssessment(int token, int studentid, String courseCode) 
-    throws UnauthorizedAccess, NoMatchingAssessment, RemoteException {
+    throws UnauthorizedAccess, NoMatchingAssessment {
         if(!checkToken(token))
             {
         		throw new UnauthorizedAccess("Token has expired");
@@ -94,7 +89,7 @@ public class ExamEngine implements ExamServer {
 
         for(Assessment cur_assess: assessments)
         {
-            if(cur_assess.getAssociatedID() == studentid)
+            if(cur_assess.getAssociatedID() == studentid && cur_assess.getCourseID().equals(courseCode))
             {
                 return cur_assess;
             }
@@ -104,7 +99,7 @@ public class ExamEngine implements ExamServer {
 
     /*Don't know why studentid is passed if you are giving me a completed Assessment object */
     public void submitAssessment(int token, int studentid, Assessment completed) throws
-            UnauthorizedAccess, NoMatchingAssessment, RemoteException {
+            UnauthorizedAccess, NoMatchingAssessment {
         if(!checkToken(token))
         {
         	throw new UnauthorizedAccess("Token has expired");
@@ -112,7 +107,7 @@ public class ExamEngine implements ExamServer {
         assessments.add(completed);
     }
 
-    private boolean checkToken(int token) throws NoMatchingAssessment
+    private boolean checkToken(int token)
     {   
         Date current_time = new Date();
         if(tokens.containsKey(token))

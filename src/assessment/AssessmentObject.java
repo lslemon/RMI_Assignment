@@ -10,12 +10,12 @@ public class AssessmentObject implements Assessment {
     private Date close_date;
     private String info;
     private int student_id;
-    private int course_id;
+    private String course_id;
     private int mcq_question_num;
     private List<Question> questions = new ArrayList<Question>();
     private List<Integer> answers = new ArrayList<Integer>();
 
-    public AssessmentObject(String information, Date closing_date, int id, int course_code)
+    public AssessmentObject(String information, Date closing_date, int id, String course_code)
     {
         this.info = information;
         this.close_date = closing_date;
@@ -80,7 +80,12 @@ public class AssessmentObject implements Assessment {
         return answers.get(questionNumber);
     }
 
-	// Return student id associated with this assessment object
+    @Override
+    public String getCourseID() {
+        return course_id;
+    }
+
+    // Return student id associated with this assessment object
 	// This will be preset on the server before object is download
     public int getAssociatedID()
     {
