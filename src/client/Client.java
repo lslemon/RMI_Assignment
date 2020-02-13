@@ -1,17 +1,12 @@
 package client;
 
-import assessment.Assessment;
 import assessment.ExamServer;
 
 import javax.swing.*;
-import java.awt.*;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
-import java.util.function.LongFunction;
 
 public class Client
 {

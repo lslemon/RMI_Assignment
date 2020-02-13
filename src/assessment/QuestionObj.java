@@ -1,7 +1,9 @@
 package engine;
 // Question.java
 
-public class QuestionObj implements Question 
+import assessment.Question;
+
+public class QuestionObj implements Question
 {	
 	private static final long serialVersionUID = 1L;
 	private int number;

@@ -1,13 +1,10 @@
-package engine;
+package assessment;
 // AssessmentObject.java 
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import engine.Assessment;
 import engine.InvalidOptionNumber;
-import engine.InvalidQuestionNumber;
-import engine.Question;
 
 public class AssessmentObject implements Assessment {
     
@@ -88,10 +85,5 @@ public class AssessmentObject implements Assessment {
     {
         return this.student_id;
     }
-
-	@Override
-	public int getAssociatedCourseCode() {
-		return this.course_id;
-	}
 
 }

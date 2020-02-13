@@ -2,7 +2,6 @@ package client;
 
 import assessment.ExamServer;
 import assessment.NoMatchingAssessment;
-import engine.ExamEngine;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -11,7 +10,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -47,11 +45,7 @@ public class AssessmentSummary
 
         try {
             assessmentSummary = examServer.getAvailableSummary(token, studentId);
-        } catch (UnauthorizedAccess unauthorizedAccess) {
-            unauthorizedAccess.printStackTrace();
-        } catch (NoMatchingAssessment noMatchingAssessment) {
-            noMatchingAssessment.printStackTrace();
-        } catch (RemoteException e) {
+        } catch (RemoteException | UnauthorizedAccess | NoMatchingAssessment e) {
             e.printStackTrace();
         }
 

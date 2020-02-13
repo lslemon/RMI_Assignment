@@ -1,5 +1,10 @@
 package engine;
 
+import assessment.Assessment;
+import assessment.AssessmentObject;
+import assessment.ExamServer;
+import assessment.NoMatchingAssessment;
+import client.UnauthorizedAccess;
 
 import java.rmi.RemoteException;
 
@@ -12,11 +17,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-
-import engine.ExamServer;
-import engine.AssessmentObject;
-import engine.UnauthorizedAccess;
-import engine.NoMatchingAssessment;
 
 public class ExamEngine implements ExamServer {
 
@@ -36,7 +36,7 @@ public class ExamEngine implements ExamServer {
 
     // Implement the methods defined in the ExamServer interface...
     // Return an access token that allows access to the server for some time period
-    public int login(int studentid, String password) throws UnauthorizedAccess, RemoteException 
+    public int login(int studentid, String password) throws UnauthorizedAccess, RemoteException
     {
     	int token = 0;
         if(whitelist.containsKey(100) && whitelist.get(100) == password)
@@ -60,7 +60,7 @@ public class ExamEngine implements ExamServer {
     }
 
     // Return a summary list of Assessments currently available for this studentid
-    public List<String> getAvailableSummary(int token, int studentid) throws UnauthorizedAccess, NoMatchingAssessment, RemoteException 
+    public List<String> getAvailableSummary(int token, int studentid) throws UnauthorizedAccess, NoMatchingAssessment, RemoteException
     {
         if(!checkToken(token))
         {
@@ -102,8 +102,8 @@ public class ExamEngine implements ExamServer {
     }
 
     /*Don't know why studentid is passed if you are giving me a completed Assessment object */
-    public void submitAssessment(int token, int studentid, Assessment completed) throws 
-                UnauthorizedAccess, NoMatchingAssessment, RemoteException {
+    public void submitAssessment(int token, int studentid, Assessment completed) throws
+            UnauthorizedAccess, NoMatchingAssessment, RemoteException {
         if(!checkToken(token))
         {
         	throw new UnauthorizedAccess("Token has expired");

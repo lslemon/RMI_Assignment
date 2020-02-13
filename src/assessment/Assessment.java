@@ -1,6 +1,8 @@
 // Assessment.java 
 
 package assessment;
+import engine.InvalidOptionNumber;
+
 import java.util.Date;
 import java.util.List;
 import java.io.Serializable;
@@ -22,7 +24,7 @@ public interface Assessment extends Serializable {
 
 	// Answer a particular question
 	public void selectAnswer(int questionNumber, int optionNumber) throws
-		InvalidQuestionNumber, InvalidOptionNumber;
+		InvalidQuestionNumber, InvalidOptionNumber, InvalidQuestionNumber, InvalidOptionNumber;
 
 	// Return selected answer or zero if none selected yet
 	public int getSelectedAnswer(int questionNumber);

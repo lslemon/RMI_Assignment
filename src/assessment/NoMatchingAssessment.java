@@ -1,8 +1,9 @@
 package assessment;
 
-public class NoMatchingAssessment extends Exception {
-
-	public NoMatchingAssessment(String reason) {
+public class NoMatchingAssessment extends Exception 
+{
+	public NoMatchingAssessment(String reason) 
+	{
 		super(reason);
 	}
 }
