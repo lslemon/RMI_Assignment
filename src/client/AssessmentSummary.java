@@ -16,7 +16,6 @@ import java.util.List;
 public class AssessmentSummary
 {
     private JPanel rootPanel;
-    private JPanel loginPanel;
     private JLabel welcomeLabel;
     private JLabel notificationLabel;
     private JList jList;
@@ -70,9 +69,16 @@ public class AssessmentSummary
     }
 
     private ListSelectionListener listSelectionListener = new ListSelectionListener() {
+        int counter = 0;
         @Override
-        public void valueChanged(ListSelectionEvent e) {
-            System.out.println((String)jList.getSelectedValue());
+        public void valueChanged(ListSelectionEvent e)
+        {
+            counter ++;
+            if(counter == 2)
+            {
+                counter = 0;
+                System.out.println((String)jList.getSelectedValue());
+            }
         }
     };
 
