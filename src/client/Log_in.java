@@ -7,6 +7,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.rmi.RemoteException;
 
 public class Log_in
@@ -74,6 +76,41 @@ public class Log_in
     public JPanel getRootPanel() {
         return rootPanel;
     }
+
+    private FocusListener focusListener = new FocusListener() {
+        @Override
+        public void focusGained(FocusEvent e)
+        {
+
+        }
+
+        @Override
+        public void focusLost(FocusEvent e)
+        {
+            if(e.getSource() == passwordField)
+            {
+                System.out.println("Received password field event");
+//                listener.onPasswordEntered(e.getActionCommand());
+                password = new String(((JPasswordField)e.getComponent()).getPassword());
+            }
+
+            if(e.getSource() == studentIdField)
+            {
+                System.out.println("Received text field event");
+//                listener.onStudentIdEntered(e.getActionCommand());
+                String str = ((JTextField)e.getComponent()).getText();
+                //TODO Handle Inappropriate data entries
+                try
+                {
+                    studentId = new Integer(str);
+                }
+                catch (NumberFormatException exception)
+                {
+                    rootPanel.add(new JLabel("Student ID must be numerical"));
+                }
+            }
+        }
+    };
 
     private ActionListener actionListener = new ActionListener() {
         @Override
