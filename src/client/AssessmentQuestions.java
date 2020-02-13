@@ -17,8 +17,6 @@ import java.util.List;
 public class AssessmentQuestions
 {
     private JPanel rootPanel;
-    private JLabel welcomeLabel;
-    private JLabel notificationLabel;
     private JList jList;
 
     private PanelListener listener;
@@ -44,19 +42,13 @@ public class AssessmentQuestions
         this.examServer = examServer;
 
 
-
-        welcomeLabel = new JLabel("Welcome Student " + studentId);
-
         jList = new JList(assessment.getQuestions().toArray());
         jList.setLayoutOrientation(JList.VERTICAL);
         jList.addListSelectionListener(listSelectionListener);
 
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
-        rootPanel.add(welcomeLabel);
-        rootPanel.add(notificationLabel);
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
-
         rootPanel.add(jList);
     }
 
