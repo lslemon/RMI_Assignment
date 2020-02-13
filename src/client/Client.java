@@ -68,13 +68,15 @@ public class Client
                 {
                     System.out.println("Log on");
                     int token = 0;
-                    try {
+                    try
+                    {
                         token = engine.login(studentId, password);
-                    } catch (UnauthorizedAccess unauthorizedAccess) {
-                        unauthorizedAccess.printStackTrace();
-                    } catch (RemoteException e) {
+                    } catch (UnauthorizedAccess | RemoteException e)
+                    {
                         e.printStackTrace();
+                        return;
                     }
+
                     AssessmentSummary assessmentSummary = new AssessmentSummary(engine, token, studentId);
                     frame.setContentPane(assessmentSummary.getRootPanel());
                     frame.setVisible(true);

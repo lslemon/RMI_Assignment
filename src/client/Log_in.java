@@ -92,14 +92,12 @@ public class Log_in
             if(e.getSource() == passwordField)
             {
                 System.out.println("Received password field event");
-//                listener.onPasswordEntered(e.getActionCommand());
                 password = new String(((JPasswordField)e.getComponent()).getPassword());
             }
 
             if(e.getSource() == studentIdField)
             {
                 System.out.println("Received text field event");
-//                listener.onStudentIdEntered(e.getActionCommand());
                 String str = ((JTextField)e.getComponent()).getText();
                 //TODO Handle Inappropriate data entries
                 try
@@ -108,6 +106,7 @@ public class Log_in
                 }
                 catch (NumberFormatException exception)
                 {
+                    studentId = null;
                     rootPanel.add(new JLabel("Student ID must be numerical"));
                 }
             }
@@ -118,21 +117,6 @@ public class Log_in
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            if(e.getSource() == passwordField)
-            {
-                System.out.println("Received password field event");
-//                listener.onPasswordEntered(e.getActionCommand());
-                password = e.getActionCommand();
-            }
-
-            if(e.getSource() == studentIdField)
-            {
-                System.out.println("Received text field event");
-//                listener.onStudentIdEntered(e.getActionCommand());
-                String str = e.getActionCommand();
-                //TODO Handle Inappropriate data entries
-                studentId = new Integer(e.getActionCommand());
-            }
 
             if(e.getSource() == logInButton)
             {
@@ -140,12 +124,6 @@ public class Log_in
                 if(studentId == null || password == null)
                 {
                     rootPanel.add(new JLabel("Missing username or password"));
-                    return;
-                }
-
-                if(!(studentId instanceof Integer))
-                {
-                    rootPanel.add(new JLabel("Student ID must be numerical"));
                     return;
                 }
 
