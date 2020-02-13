@@ -38,6 +38,7 @@ public class ExamEngine implements ExamServer {
     // Return an access token that allows access to the server for some time period
     public int login(int studentid, String password) throws UnauthorizedAccess, RemoteException
     {
+        System.out.println("Attempting Log in\nID: "+studentid+"\nPassword: "+password);
     	int token = 0;
         if(whitelist.containsKey(studentid) && whitelist.get(studentid).equals( password))
         {
@@ -54,7 +55,7 @@ public class ExamEngine implements ExamServer {
         }
         else
         {
-            throw new UnauthorizedAccess("");
+            throw new UnauthorizedAccess("Incorrect Log in Details");
         }
         return 0;
     }
