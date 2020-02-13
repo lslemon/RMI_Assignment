@@ -39,7 +39,7 @@ public class ExamEngine implements ExamServer {
     public int login(int studentid, String password) throws UnauthorizedAccess, RemoteException
     {
     	int token = 0;
-        if(whitelist.containsKey(100) && whitelist.get(100) == password)
+        if(whitelist.containsKey(studentid) && whitelist.get(studentid).equals( password))
         {
             boolean unique = false;
             while(unique == false)
