@@ -1,7 +1,5 @@
 package assessment;
-// AssessmentObject.java 
-
-import engine.QuestionObj;
+// AssessmentObject.java
 
 import java.util.ArrayList;
 import java.util.Date;
