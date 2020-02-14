@@ -77,9 +77,9 @@ public class AssessmentSummary
         @Override
         public void valueChanged(ListSelectionEvent e)
         {
-            counter ++;
-            if(counter == 2)
-            {
+//            counter ++;
+//            if(counter == 2)
+//            {
                 counter = 0;
                 String assessmentInfo = (String)jList.getSelectedValue();
                 System.out.println(assessmentInfo);
@@ -94,7 +94,7 @@ public class AssessmentSummary
                 }
                 listener.onAssessmentChosen(assessment);
                 System.out.println(assessment.getQuestions().size());
-            }
+//            }
         }
     };
 
