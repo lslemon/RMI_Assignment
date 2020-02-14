@@ -104,7 +104,16 @@ public class ExamEngine implements ExamServer {
         {
         	throw new UnauthorizedAccess("Token has expired");
         }
-        assessments.add(completed);
+        for(Assessment cur_assess: assessments)
+        {
+            if(cur_assess.getCourseID().equals(completed.getCourseID()))
+            {
+                int index = assessments.indexOf(cur_assess);
+                assessments.remove(index);
+                assessments.add(index, completed);
+            }
+        }
+
     }
 
     private boolean checkToken(int token)
