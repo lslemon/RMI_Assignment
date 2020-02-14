@@ -11,7 +11,7 @@ public class AssessmentObject implements Assessment {
     private String info;
     private int student_id;
     private String course_id;
-    private int mcq_question_num;
+//    private int mcq_question_num;
     private List<Question> questions = new ArrayList<Question>();
     private List<Integer> answers = new ArrayList<Integer>();
 
@@ -59,14 +59,14 @@ public class AssessmentObject implements Assessment {
     {
         if(questionNumber <= questions.size()-1)
         {
-            if(optionNumber <= mcq_question_num - 1)
-            {
+//            if(optionNumber <= mcq_question_num - 1)
+//            {
                 answers.add(questionNumber,optionNumber);
-            }
-            else
-            {
-            	throw new InvalidOptionNumber("Invalid Option Number");
-            }
+//            }
+//            else
+//            {
+//            	throw new InvalidOptionNumber("Invalid Option Number");
+//            }
         }
         else
         {
