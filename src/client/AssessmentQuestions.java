@@ -1,8 +1,6 @@
 package client;
 
-import assessment.Assessment;
-import assessment.ExamServer;
-import assessment.Question;
+import assessment.*;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -12,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
 import java.util.List;
+import java.lang.Object;
 
 public class AssessmentQuestions
 {
@@ -21,6 +20,7 @@ public class AssessmentQuestions
 
     private QuestionListener listener;
     private Assessment assessment;
+    private List<Question> questions;
 
     private List<ButtonGroup> questionButtons;
 
@@ -39,16 +39,19 @@ public class AssessmentQuestions
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
 
+        questions = new LinkedList<>();
         questionButtons = new LinkedList<>();
 
         for(Question question: assessment.getQuestions())
         {
+            questions.add(question);
             ButtonGroup answerOptions = new ButtonGroup();
-            System.out.println(question.getQuestionDetail());
             JPanel questionPanel = new JPanel();
+
             questionPanel.setLayout(new BoxLayout(questionPanel, BoxLayout.PAGE_AXIS));
             JLabel questionLabel = new JLabel(question.getQuestionDetail());
             questionPanel.add(questionLabel);
+
             for(String answer: question.getAnswerOptions())
             {
                 System.out.println(answer);
@@ -57,6 +60,7 @@ public class AssessmentQuestions
                 questionPanel.add(answerButton);
                 answerOptions.add(answerButton);
             }
+
             rootPanel.add(questionPanel);
             questionButtons.add(answerOptions);
         }
@@ -85,6 +89,26 @@ public class AssessmentQuestions
         @Override
         public void actionPerformed(ActionEvent e)
         {
+            for(ButtonGroup buttonGroup: questionButtons)
+            {
+                if(((JRadioButton)e.getSource()).getModel().getGroup().equals(buttonGroup))
+                {
+                    int optionNum = 0;
+                    int questionNum = questionButtons.indexOf(buttonGroup);
+                    for(String answerOption: questions.get(questionNum).getAnswerOptions())
+                    {
+                        if(answerOption.equals(e.getActionCommand()))
+                        {
+                            try {
+                                assessment.selectAnswer(questionNum, optionNum);
+                            } catch (InvalidQuestionNumber | InvalidOptionNumber e1) {
+                                e1.printStackTrace();
+                            }
+                        }
+                        optionNum++;
+                    }
+                }
+            }
             System.out.println(((JRadioButton)e.getSource()).getText());
         }
     };
