@@ -57,8 +57,8 @@ public class AssessmentQuestions
             }
             jList.add(questionPanel);
         }
-//        jList.add(new JLabel(assessment.getQuestions().get(0).getQuestionDetail()));
-//        jList.add(new JLabel(assessment.getQuestions().get(1).getQuestionDetail()));
+        jList.add(new JLabel(assessment.getQuestions().get(0).getQuestionDetail()));
+        jList.add(new JLabel(assessment.getQuestions().get(1).getQuestionDetail()));
         jList.setLayoutOrientation(JList.VERTICAL);
         jList.addListSelectionListener(listSelectionListener);
 
