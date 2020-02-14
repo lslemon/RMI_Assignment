@@ -5,6 +5,8 @@ import assessment.ExamServer;
 import assessment.Question;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -44,6 +46,7 @@ public class AssessmentQuestions
             {
                 System.out.println(answer);
                 JRadioButton answerButton = new JRadioButton(answer);
+                answerButton.addActionListener(answerActionListener);
                 questionPanel.add(answerButton);
             }
             rootPanel.add(questionPanel);
@@ -58,6 +61,7 @@ public class AssessmentQuestions
         returnButton.addActionListener(actionListener);
 
         rootPanel.add(submitButton);
+        rootPanel.add(returnButton);
     }
 
     public JPanel getRootPanel() {
@@ -68,6 +72,13 @@ public class AssessmentQuestions
         this.listener = listener;
     }
 
+    private ActionListener answerActionListener = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+        }
+    };
+
     private ActionListener actionListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e)
@@ -77,7 +88,10 @@ public class AssessmentQuestions
                 listener.onAssignmentSubmission(assessment);
             }
 
-
+            if(e.getSource() == returnButton)
+            {
+                listener.onReturnPressed();
+            }
         }
     };
 }

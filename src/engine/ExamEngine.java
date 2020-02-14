@@ -113,7 +113,6 @@ public class ExamEngine implements ExamServer {
                 assessments.add(index, completed);
             }
         }
-
     }
 
     private boolean checkToken(int token)
