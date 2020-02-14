@@ -22,8 +22,7 @@ public class AssessmentQuestions
     private QuestionListener listener;
     private Assessment assessment;
 
-    private List<List<JRadioButton>> questionButtons;
-    private List<JRadioButton> answerOptionsButtons;
+    private List<ButtonGroup> questionButtons;
 
     public interface QuestionListener
     {
@@ -44,7 +43,7 @@ public class AssessmentQuestions
 
         for(Question question: assessment.getQuestions())
         {
-            answerOptionsButtons = new LinkedList<>();
+            ButtonGroup answerOptions = new ButtonGroup();
             System.out.println(question.getQuestionDetail());
             JPanel questionPanel = new JPanel();
             questionPanel.setLayout(new BoxLayout(questionPanel, BoxLayout.PAGE_AXIS));
@@ -56,10 +55,10 @@ public class AssessmentQuestions
                 JRadioButton answerButton = new JRadioButton(answer);
                 answerButton.addActionListener(answerActionListener);
                 questionPanel.add(answerButton);
-                answerOptionsButtons.add(answerButton);
+                answerOptions.add(answerButton);
             }
             rootPanel.add(questionPanel);
-            questionButtons.add(answerOptionsButtons);
+            questionButtons.add(answerOptions);
         }
 
         rootPanel.add(Box.createRigidArea(new Dimension(100,100)));
