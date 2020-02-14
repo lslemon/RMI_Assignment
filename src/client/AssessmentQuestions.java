@@ -10,6 +10,8 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
+import java.util.List;
 
 public class AssessmentQuestions
 {
@@ -19,6 +21,9 @@ public class AssessmentQuestions
 
     private QuestionListener listener;
     private Assessment assessment;
+
+    private List<List<JRadioButton>> questionButtons;
+    private List<JRadioButton> answerOptionsButtons;
 
     public interface QuestionListener
     {
@@ -35,8 +40,11 @@ public class AssessmentQuestions
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
 
+        questionButtons = new LinkedList<>();
+
         for(Question question: assessment.getQuestions())
         {
+            answerOptionsButtons = new LinkedList<>();
             System.out.println(question.getQuestionDetail());
             JPanel questionPanel = new JPanel();
             questionPanel.setLayout(new BoxLayout(questionPanel, BoxLayout.PAGE_AXIS));
@@ -48,8 +56,10 @@ public class AssessmentQuestions
                 JRadioButton answerButton = new JRadioButton(answer);
                 answerButton.addActionListener(answerActionListener);
                 questionPanel.add(answerButton);
+                answerOptionsButtons.add(answerButton);
             }
             rootPanel.add(questionPanel);
+            questionButtons.add(answerOptionsButtons);
         }
 
         rootPanel.add(Box.createRigidArea(new Dimension(100,100)));
@@ -76,6 +86,7 @@ public class AssessmentQuestions
         @Override
         public void actionPerformed(ActionEvent e)
         {
+            System.out.println(((JRadioButton)e.getSource()).getText());
         }
     };
 
