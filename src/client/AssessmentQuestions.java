@@ -44,6 +44,11 @@ public class AssessmentQuestions
 
         List<JPanel> questionPanels = new LinkedList<>();
 
+        rootPanel = new JPanel();
+        rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
+        rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
+
+
         for(Question question: assessment.getQuestions())
         {
             System.out.println(question.getQuestionDetail());
@@ -70,7 +75,7 @@ public class AssessmentQuestions
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
-        rootPanel.add(jListQuestions);
+//        rootPanel.add(jListQuestions);
     }
 
     public JPanel getRootPanel() {
