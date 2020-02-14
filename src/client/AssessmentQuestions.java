@@ -53,7 +53,7 @@ public class AssessmentQuestions
         {
             System.out.println(question.getQuestionDetail());
             JPanel questionPanel = new JPanel();
-            questionPanel.setLayout(new BoxLayout(questionPanel, BoxLayout.LINE_AXIS));
+            questionPanel.setLayout(new BoxLayout(questionPanel, BoxLayout.PAGE_AXIS));
             JLabel questionLabel = new JLabel(question.getQuestionDetail());
             questionPanel.add(questionLabel);
             for(String answer: question.getAnswerOptions())
@@ -71,10 +71,7 @@ public class AssessmentQuestions
         jListQuestions.add(new JLabel(assessment.getQuestions().get(1).getQuestionDetail()));
         jListQuestions.setLayoutOrientation(JList.VERTICAL);
         jListQuestions.addListSelectionListener(listSelectionListener);
-
-        rootPanel = new JPanel();
-        rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
-        rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
+        
 //        rootPanel.add(jListQuestions);
     }
 
