@@ -3,6 +3,7 @@ package client;
 import assessment.Assessment;
 import assessment.ExamServer;
 import assessment.NoMatchingAssessment;
+import assessment.Question;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -42,7 +43,22 @@ public class AssessmentQuestions
         this.examServer = examServer;
 
 
-        jList = new JList(assessment.getQuestions().toArray());
+        jList = new JList();
+        for(Question question: assessment.getQuestions())
+        {
+            JPanel questionPanel = new JPanel();
+            questionPanel.setLayout(new BoxLayout(questionPanel, BoxLayout.LINE_AXIS));
+            JLabel questionLabel = new JLabel(question.getQuestionDetail());
+            questionPanel.add(questionLabel);
+            for(String answer: question.getAnswerOptions())
+            {
+                JRadioButton answerButton = new JRadioButton(answer);
+                questionPanel.add(answerButton);
+            }
+            jList.add(questionPanel);
+        }
+//        jList.add(new JLabel(assessment.getQuestions().get(0).getQuestionDetail()));
+//        jList.add(new JLabel(assessment.getQuestions().get(1).getQuestionDetail()));
         jList.setLayoutOrientation(JList.VERTICAL);
         jList.addListSelectionListener(listSelectionListener);
 
