@@ -18,7 +18,7 @@ import java.util.List;
 public class AssessmentQuestions
 {
     private JPanel rootPanel;
-    private JList jList;
+    private JList jListQuestions;
 
     private PanelListener listener;
     private ExamServer examServer;
@@ -58,18 +58,19 @@ public class AssessmentQuestions
                 questionPanel.add(answerButton);
             }
             questionPanels.add(questionPanel);
+            rootPanel.add(questionPanel);
         }
 
-        jList = new JList(questionPanels.toArray());
-        jList.add(new JLabel(assessment.getQuestions().get(0).getQuestionDetail()));
-        jList.add(new JLabel(assessment.getQuestions().get(1).getQuestionDetail()));
-        jList.setLayoutOrientation(JList.VERTICAL);
-        jList.addListSelectionListener(listSelectionListener);
+        jListQuestions = new JList(questionPanels.toArray());
+        jListQuestions.add(new JLabel(assessment.getQuestions().get(0).getQuestionDetail()));
+        jListQuestions.add(new JLabel(assessment.getQuestions().get(1).getQuestionDetail()));
+        jListQuestions.setLayoutOrientation(JList.VERTICAL);
+        jListQuestions.addListSelectionListener(listSelectionListener);
 
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
-        rootPanel.add(jList);
+        rootPanel.add(jListQuestions);
     }
 
     public JPanel getRootPanel() {
@@ -85,7 +86,7 @@ public class AssessmentQuestions
             if(counter == 2)
             {
                 counter = 0;
-                String assessmentInfo = (String)jList.getSelectedValue();
+                String assessmentInfo = (String) jListQuestions.getSelectedValue();
                 System.out.println(assessmentInfo);
                 String courseCode = assessmentInfo.substring(assessmentInfo.length()-3);
                 Assessment assessment = null;
