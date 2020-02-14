@@ -46,12 +46,14 @@ public class AssessmentQuestions
         jList = new JList();
         for(Question question: assessment.getQuestions())
         {
+            System.out.println(question.getQuestionDetail());
             JPanel questionPanel = new JPanel();
             questionPanel.setLayout(new BoxLayout(questionPanel, BoxLayout.LINE_AXIS));
             JLabel questionLabel = new JLabel(question.getQuestionDetail());
             questionPanel.add(questionLabel);
             for(String answer: question.getAnswerOptions())
             {
+                System.out.println(answer);
                 JRadioButton answerButton = new JRadioButton(answer);
                 questionPanel.add(answerButton);
             }
