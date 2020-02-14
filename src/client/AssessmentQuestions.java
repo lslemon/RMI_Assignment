@@ -42,8 +42,8 @@ public class AssessmentQuestions
         this.studentId = studentId;
         this.examServer = examServer;
 
+        List<JPanel> questionPanels = new LinkedList<>();
 
-        jList = new JList();
         for(Question question: assessment.getQuestions())
         {
             System.out.println(question.getQuestionDetail());
@@ -57,8 +57,10 @@ public class AssessmentQuestions
                 JRadioButton answerButton = new JRadioButton(answer);
                 questionPanel.add(answerButton);
             }
-            jList.add(questionPanel);
+            questionPanels.add(questionPanel);
         }
+
+        jList = new JList(questionPanels.toArray());
         jList.add(new JLabel(assessment.getQuestions().get(0).getQuestionDetail()));
         jList.add(new JLabel(assessment.getQuestions().get(1).getQuestionDetail()));
         jList.setLayoutOrientation(JList.VERTICAL);
