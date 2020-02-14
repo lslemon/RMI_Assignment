@@ -2,6 +2,7 @@ package client;
 
 import assessment.Assessment;
 import assessment.ExamServer;
+import assessment.NoMatchingAssessment;
 
 import javax.swing.*;
 import java.rmi.RemoteException;
@@ -87,9 +88,29 @@ public class Client
                         @Override
                         public void onAssessmentChosen(Assessment assessment) {
                             AssessmentQuestions assessmentQuestions =
-                                    new AssessmentQuestions(engine, finalToken, studentId, assessment);
+                                    new AssessmentQuestions(assessment);
                             frame.setContentPane(assessmentQuestions.getRootPanel());
                             frame.setVisible(true);
+                            assessmentQuestions.setQuestionListener(new AssessmentQuestions.QuestionListener() {
+                                @Override
+                                public void onAssignmentSubmission(Assessment assessment)
+                                {
+                                    try {
+                                        engine.submitAssessment(finalToken, studentId, assessment);
+                                    } catch (UnauthorizedAccess | NoMatchingAssessment | RemoteException e) {
+                                        e.printStackTrace();
+                                    }
+                                    frame.setContentPane(assessmentSummary.getRootPanel());
+                                    frame.setVisible(true);
+                                }
+
+                                @Override
+                                public void onReturnPressed()
+                                {
+                                    frame.setContentPane(assessmentSummary.getRootPanel());
+                                    frame.setVisible(true);
+                                }
+                            });
                         }
                     });
                 }
