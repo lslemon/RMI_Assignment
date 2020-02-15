@@ -36,7 +36,7 @@ public class AssessmentQuestions
     public AssessmentQuestions(Assessment assessment)
     {
         this.assessment = assessment;
-        
+
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));

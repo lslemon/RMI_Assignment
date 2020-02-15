@@ -23,7 +23,9 @@ public class ExamEngine implements ExamServer {
         super();
         whitelist.put(100,"password");
         whitelist.put(200,"password");
-        assessments.add((Assessment)new AssessmentObject("Assessment deciding who is cooler!\nCourse code: 123", new Date(), 100, "123"));
+        Date date = new Date();
+        date.setMinutes(2);
+        assessments.add((Assessment)new AssessmentObject("Assessment deciding who is cooler!\nCourse code: 123", date, 100, "123"));
     }
 
     // Implement the methods defined in the ExamServer interface...
@@ -86,7 +88,7 @@ public class ExamEngine implements ExamServer {
 
         for(Assessment cur_assess: assessments)
         {
-            if(cur_assess.getAssociatedID() == studentid && cur_assess.getCourseID().equals(courseCode))
+            if(cur_assess.getAssociatedID() == studentid && cur_assess.getCourseID().equals(courseCode) && cur_assess.getClosingDate().after(new Date()))
             {
                 return cur_assess;
             }
