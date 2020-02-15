@@ -113,8 +113,9 @@ public class AssessmentSummary
         @Override
         public void valueChanged(ListSelectionEvent e)
         {
-            if(e.getSource() == jListTodo)
-            {
+            System.out.println(e.getSource().toString());
+//            if(e.getSource() == jListTodo)
+//            {
                 String assessmentInfo = (String) jListTodo.getSelectedValue();
                 System.out.println(assessmentInfo);
                 String courseCode = assessmentInfo.substring(assessmentInfo.length()-3);
@@ -128,23 +129,23 @@ public class AssessmentSummary
                 }
                 listener.onAssessmentChosen(assessment);
                 System.out.println(assessment.getQuestions().size());
-            }
+//            }
 
-            if(e.getSource() == jListTodo)
-            {
-                String assessmentInfo = (String) jListCompleted.getSelectedValue();
-                System.out.println(assessmentInfo);
-                String courseCode = assessmentInfo.substring(assessmentInfo.length()-3);
-                Assessment assessment = null;
-                try {
-                    assessment = examServer.getAssessment(token, studentId, courseCode);
-                } catch (UnauthorizedAccess unauthorizedAccess) {
-                    unauthorizedAccess.printStackTrace();
-                } catch (NoMatchingAssessment | RemoteException ex) {
-                    ex.printStackTrace();
-                }
-                listener.onAssessmentChosen(assessment);
-            }
+//            if(e.getSource() == jListTodo)
+//            {
+//                String assessmentInfo = (String) jListCompleted.getSelectedValue();
+//                System.out.println(assessmentInfo);
+//                String courseCode = assessmentInfo.substring(assessmentInfo.length()-3);
+//                Assessment assessment = null;
+//                try {
+//                    assessment = examServer.getAssessment(token, studentId, courseCode);
+//                } catch (UnauthorizedAccess unauthorizedAccess) {
+//                    unauthorizedAccess.printStackTrace();
+//                } catch (NoMatchingAssessment | RemoteException ex) {
+//                    ex.printStackTrace();
+//                }
+//                listener.onAssessmentChosen(assessment);
+////            }
         }
     };
 
