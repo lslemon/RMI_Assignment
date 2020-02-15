@@ -1,5 +1,7 @@
 package client;
 
+//Luke Slemon 16421694
+
 import assessment.Assessment;
 import assessment.ExamServer;
 import assessment.NoMatchingAssessment;
@@ -19,6 +21,7 @@ public class AssessmentSummary
     private JPanel rootPanel;
     private JLabel welcomeLabel;
     private JLabel notificationLabel;
+    private JLabel assessmentsTodoLabel;
     private JList jListTodo;
     private JList jListCompleted;
     private JButton closeButton;
@@ -70,6 +73,7 @@ public class AssessmentSummary
 
         welcomeLabel = new JLabel("Welcome Student " + studentId);
         notificationLabel = new JLabel("You have "+assessmentSummary.size()+" Assessments waiting for completion");
+        assessmentsTodoLabel = new JLabel("You have completed "+assessmentsCompleted.size()+" Assessments");
 
         jListTodo = new JList(assessmentSummary.toArray());
         jListTodo.setLayoutOrientation(JList.VERTICAL);
@@ -83,14 +87,16 @@ public class AssessmentSummary
         closeButton.addActionListener(actionListener);
 
         rootPanel = new JPanel();
-        rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
+        rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.Y_AXIS));
         rootPanel.add(welcomeLabel);
         rootPanel.add(notificationLabel);
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
 
         rootPanel.add(jListTodo);
-        rootPanel.add(new JLabel("You have completed "+assessmentsCompleted.size()+" Assessments"));
+        rootPanel.add(assessmentsTodoLabel);
+        rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
         rootPanel.add(jListCompleted);
+        rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
         rootPanel.add(closeButton);
     }
 

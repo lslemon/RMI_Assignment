@@ -12,7 +12,6 @@ import java.util.Scanner;
 public class Client
 {
     private static int studentId;
-    private static String password;
     private static int counter = 0;
 
     private Client()
@@ -38,32 +37,6 @@ public class Client
             frame.setVisible(true);
             frame.setSize(700, 600);
             login.setPanelListener(new Log_in.LogInListener() {
-                @Override
-                public void onStudentIdEntered(String text)
-                {
-                    counter++;
-                    studentId = new Integer(text);
-                    if(counter == 2)
-                    {
-                        counter =0;
-                        System.out.println("Log in");
-                        AssessmentSummary assessmentSummary = new AssessmentSummary(null, studentId, 1);
-                        frame.setContentPane(assessmentSummary.getRootPanel());
-                    }
-                }
-
-                @Override
-                public void onPasswordEntered(String text)
-                {
-                    counter++;
-                    password = text;
-                    if(counter == 2)
-                    {
-                        counter =0;
-                        System.out.println("Log in");
-                    }
-                }
-
                 @Override
                 public void onLoginInfoEntered(String password, Integer studentId)
                 {

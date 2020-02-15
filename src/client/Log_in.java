@@ -1,5 +1,7 @@
 package client;
 
+//Luke Slemon 16426194
+
 import assessment.ExamServer;
 import engine.ExamEngine;
 
@@ -31,8 +33,6 @@ public class Log_in
 
     public interface LogInListener
     {
-        public void onStudentIdEntered(String text);
-        public void onPasswordEntered(String text);
         public void onLoginInfoEntered(String password, Integer studentId);
     }
 
