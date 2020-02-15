@@ -1,8 +1,6 @@
 package client;
 
-import assessment.Assessment;
-import assessment.ExamServer;
-import assessment.NoMatchingAssessment;
+import assessment.*;
 
 import javax.swing.*;
 import java.rmi.RemoteException;
@@ -97,7 +95,8 @@ public class Client
                                 {
                                     try {
                                         engine.submitAssessment(finalToken, studentId, assessment);
-                                    } catch (UnauthorizedAccess | NoMatchingAssessment | RemoteException e) {
+                                    } catch (UnauthorizedAccess | NoMatchingAssessment | RemoteException
+                                            | InvalidOptionNumber | InvalidQuestionNumber e) {
                                         e.printStackTrace();
                                     }
                                     assessmentSummary.loadAssessments();
