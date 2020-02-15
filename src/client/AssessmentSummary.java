@@ -21,6 +21,7 @@ public class AssessmentSummary
     private JLabel notificationLabel;
     private JList jListTodo;
     private JList jListCompleted;
+    private JButton closeButton;
 
     private List<String> assessmentSummary = new LinkedList<>();
     private List<String> assessmentsCompleted = new LinkedList<>();
@@ -36,6 +37,7 @@ public class AssessmentSummary
     public interface SummaryListener
     {
         public void onAssessmentChosen(Assessment assessment);
+        public void onClosePressed();
     }
 
     //TODO Handle double click in JList
@@ -77,6 +79,9 @@ public class AssessmentSummary
         jListCompleted.setLayoutOrientation(JList.VERTICAL);
         jListCompleted.addListSelectionListener(listSelectionListener);
 
+        closeButton = new JButton("Close");
+        closeButton.addActionListener(actionListener);
+
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
         rootPanel.add(welcomeLabel);
@@ -84,6 +89,9 @@ public class AssessmentSummary
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
 
         rootPanel.add(jListTodo);
+        rootPanel.add(new JLabel("You have completed "+assessmentsCompleted.size()+" Assessments"));
+        rootPanel.add(jListCompleted);
+        rootPanel.add(closeButton);
     }
 
     public void setListener(SummaryListener listener) {
@@ -124,7 +132,10 @@ public class AssessmentSummary
         @Override
         public void actionPerformed(ActionEvent e)
         {
-
+            if(e.getSource() == closeButton)
+            {
+                listener.onClosePressed();
+            }
         }
     };
 }

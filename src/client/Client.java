@@ -114,6 +114,12 @@ public class Client
                                 }
                             });
                         }
+
+                        @Override
+                        public void onClosePressed()
+                        {
+                            System.exit(0);
+                        }
                     });
                 }
             });
