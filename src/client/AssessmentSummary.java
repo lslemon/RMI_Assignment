@@ -93,6 +93,7 @@ public class AssessmentSummary
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
 
         rootPanel.add(jListTodo);
+        rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
         rootPanel.add(assessmentsTodoLabel);
         rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
         rootPanel.add(jListCompleted);
@@ -109,14 +110,11 @@ public class AssessmentSummary
     }
 
     private ListSelectionListener listSelectionListener = new ListSelectionListener() {
-        int counter = 0;
         @Override
         public void valueChanged(ListSelectionEvent e)
         {
-//            counter ++;
-//            if(counter == 2)
-//            {
-                counter = 0;
+            if(e.getSource() == jListTodo)
+            {
                 String assessmentInfo = (String) jListTodo.getSelectedValue();
                 System.out.println(assessmentInfo);
                 String courseCode = assessmentInfo.substring(assessmentInfo.length()-3);
@@ -130,7 +128,23 @@ public class AssessmentSummary
                 }
                 listener.onAssessmentChosen(assessment);
                 System.out.println(assessment.getQuestions().size());
-//            }
+            }
+
+            if(e.getSource() == jListTodo)
+            {
+                String assessmentInfo = (String) jListCompleted.getSelectedValue();
+                System.out.println(assessmentInfo);
+                String courseCode = assessmentInfo.substring(assessmentInfo.length()-3);
+                Assessment assessment = null;
+                try {
+                    assessment = examServer.getAssessment(token, studentId, courseCode);
+                } catch (UnauthorizedAccess unauthorizedAccess) {
+                    unauthorizedAccess.printStackTrace();
+                } catch (NoMatchingAssessment | RemoteException ex) {
+                    ex.printStackTrace();
+                }
+                listener.onAssessmentChosen(assessment);
+            }
         }
     };
 

@@ -36,7 +36,7 @@ public class AssessmentQuestions
     public AssessmentQuestions(Assessment assessment)
     {
         this.assessment = assessment;
-
+        
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
@@ -81,6 +81,14 @@ public class AssessmentQuestions
 
     public JPanel getRootPanel() {
         return rootPanel;
+    }
+
+    public void loadPreviousAnswers()
+    {
+        for(Question question: assessment.getQuestions())
+        {
+            int asns = assessment.getSelectedAnswer(question.getQuestionNumber());
+        }
     }
 
     public void setQuestionListener(QuestionListener listener) {
