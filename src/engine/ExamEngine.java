@@ -66,7 +66,7 @@ public class ExamEngine implements ExamServer {
 
         for(Assessment cur_assess: assessments)
         {
-            if(cur_assess.getAssociatedID() == studentid)
+            if(cur_assess.getAssociatedID() == studentid  && cur_assess.getClosingDate().before(new Date()))
             {
                 summaries.add(cur_assess.getInformation());
             }
@@ -88,7 +88,7 @@ public class ExamEngine implements ExamServer {
 
         for(Assessment cur_assess: assessments)
         {
-            if(cur_assess.getAssociatedID() == studentid && cur_assess.getCourseID().equals(courseCode) && cur_assess.getClosingDate().after(new Date()))
+            if(cur_assess.getAssociatedID() == studentid && cur_assess.getCourseID().equals(courseCode))
             {
                 return cur_assess;
             }
