@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17beda72-517e-4fd1-a803-476846260528" name="Default Changelist" comment="Deleted Main Class created by IntelliJ">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assessment/AssessmentObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assessment/AssessmentObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assessment/ExamServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assessment/ExamServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/AssessmentSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/AssessmentSummary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/ExamEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/ExamEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,18 +139,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1580993577653" />
-    <state x="661" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1581603287256">
+    <state x="661" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1581778717097">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="661" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581603287256" />
+    <state x="661" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581778717097" />
     <state x="250" y="405" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1581162044316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="250" y="405" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581162044316" />
-    <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1581612211457">
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1581778715376">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1581612211457" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1581778715376" />
     <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1581697090124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

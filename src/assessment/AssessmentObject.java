@@ -14,6 +14,7 @@ public class AssessmentObject implements Assessment {
 //    private int mcq_question_num;
     private List<Question> questions = new ArrayList<Question>();
     private List<Integer> answers = new ArrayList<Integer>();
+    private boolean completed = false;
 
     public AssessmentObject(String information, Date closing_date, int id, String course_code)
     {
@@ -79,6 +80,17 @@ public class AssessmentObject implements Assessment {
     public int getSelectedAnswer(int questionNumber)
     {
         return answers.get(questionNumber);
+    }
+
+    public boolean isCompleted()
+    {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed)
+    {
+        this.info = info + "\t COMPLETED";
+        this.completed = completed;
     }
 
     @Override

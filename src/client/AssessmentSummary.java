@@ -19,9 +19,11 @@ public class AssessmentSummary
     private JPanel rootPanel;
     private JLabel welcomeLabel;
     private JLabel notificationLabel;
-    private JList jList;
+    private JList jListTodo;
+    private JList jListCompleted;
 
     private List<String> assessmentSummary = new LinkedList<>();
+    private List<String> assessmentsCompleted = new LinkedList<>();
 
     private SummaryListener listener;
     private ExamServer examServer;
@@ -29,6 +31,7 @@ public class AssessmentSummary
 
     private int studentId;
     private int token;
+
 
     public interface SummaryListener
     {
@@ -42,18 +45,37 @@ public class AssessmentSummary
         this.studentId = studentId;
         this.examServer = examServer;
 
+        loadAssessments();
+
+    }
+
+    public void loadAssessments()
+    {
         try {
             assessmentSummary = examServer.getAvailableSummary(token, studentId);
         } catch (RemoteException | UnauthorizedAccess | NoMatchingAssessment e) {
             e.printStackTrace();
         }
 
+        for(String string : assessmentSummary)
+        {
+            if(string.contains("COMPLETED"))
+            {
+                assessmentSummary.remove(string);
+                assessmentsCompleted.add(string);
+            }
+        }
+
         welcomeLabel = new JLabel("Welcome Student " + studentId);
         notificationLabel = new JLabel("You have "+assessmentSummary.size()+" Assessments waiting for completion");
 
-        jList = new JList(assessmentSummary.toArray());
-        jList.setLayoutOrientation(JList.VERTICAL);
-        jList.addListSelectionListener(listSelectionListener);
+        jListTodo = new JList(assessmentSummary.toArray());
+        jListTodo.setLayoutOrientation(JList.VERTICAL);
+        jListTodo.addListSelectionListener(listSelectionListener);
+
+        jListCompleted = new JList(assessmentsCompleted.toArray());
+        jListCompleted.setLayoutOrientation(JList.VERTICAL);
+        jListCompleted.addListSelectionListener(listSelectionListener);
 
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
@@ -61,7 +83,7 @@ public class AssessmentSummary
         rootPanel.add(notificationLabel);
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
 
-        rootPanel.add(jList);
+        rootPanel.add(jListTodo);
     }
 
     public void setListener(SummaryListener listener) {
@@ -81,7 +103,7 @@ public class AssessmentSummary
 //            if(counter == 2)
 //            {
                 counter = 0;
-                String assessmentInfo = (String)jList.getSelectedValue();
+                String assessmentInfo = (String) jListTodo.getSelectedValue();
                 System.out.println(assessmentInfo);
                 String courseCode = assessmentInfo.substring(assessmentInfo.length()-3);
                 Assessment assessment = null;

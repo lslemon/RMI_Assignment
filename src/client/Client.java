@@ -100,6 +100,7 @@ public class Client
                                     } catch (UnauthorizedAccess | NoMatchingAssessment | RemoteException e) {
                                         e.printStackTrace();
                                     }
+                                    assessmentSummary.loadAssessments();
                                     frame.setContentPane(assessmentSummary.getRootPanel());
                                     frame.setVisible(true);
                                 }
@@ -107,6 +108,7 @@ public class Client
                                 @Override
                                 public void onReturnPressed()
                                 {
+                                    assessmentSummary.loadAssessments();
                                     frame.setContentPane(assessmentSummary.getRootPanel());
                                     frame.setVisible(true);
                                 }

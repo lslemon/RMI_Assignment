@@ -96,7 +96,7 @@ public class ExamEngine implements ExamServer {
 
     /*Don't know why studentid is passed if you are giving me a completed Assessment object */
     public void submitAssessment(int token, int studentid, Assessment completed) throws
-            UnauthorizedAccess, NoMatchingAssessment {
+            UnauthorizedAccess, NoMatchingAssessment, InvalidOptionNumber, InvalidQuestionNumber {
         if(!checkToken(token))
         {
         	throw new UnauthorizedAccess("Token has expired");
@@ -105,9 +105,13 @@ public class ExamEngine implements ExamServer {
         {
             if(cur_assess.getCourseID().equals(completed.getCourseID()))
             {
-                int index = assessments.indexOf(cur_assess);
-                assessments.remove(index);
-                assessments.add(index, completed);
+                ((AssessmentObject)cur_assess).setCompleted(true);
+                for(Question question: cur_assess.getQuestions())
+                {
+                    int questionNum = question.getQuestionNumber();
+                    cur_assess.selectAnswer(questionNum, cur_assess.getSelectedAnswer(questionNum));
+                }
+                System.out.println("Assessment ready for completion");
             }
         }
     }
