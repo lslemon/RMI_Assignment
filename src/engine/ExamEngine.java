@@ -109,7 +109,7 @@ public class ExamEngine implements ExamServer {
                 for(Question question: cur_assess.getQuestions())
                 {
                     int questionNum = question.getQuestionNumber();
-                    cur_assess.selectAnswer(questionNum, cur_assess.getSelectedAnswer(questionNum));
+                    cur_assess.selectAnswer(questionNum, completed.getSelectedAnswer(questionNum));
                 }
                 System.out.println("Assessment ready for completion");
             }
