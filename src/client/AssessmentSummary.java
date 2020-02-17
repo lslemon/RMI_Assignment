@@ -62,25 +62,16 @@ public class AssessmentSummary
             e.printStackTrace();
         }
 
-        for(String string : assessmentSummary)
-        {
-            if(string.contains("COMPLETED"))
-            {
-                assessmentSummary.remove(string);
-                assessmentsCompleted.add(string);
-            }
-        }
-
         welcomeLabel = new JLabel("Welcome Student " + studentId);
-        notificationLabel = new JLabel("You have "+assessmentSummary.size()+" Assessments waiting for completion");
+        if(assessmentSummary == null)
+        {
+            notificationLabel = new JLabel("You have "+0+" Assessments waiting for completion");
+        }
+        else
+        {
+            notificationLabel = new JLabel("You have "+assessmentSummary.size()+" Assessments waiting for completion");
+        }
         assessmentsTodoLabel = new JLabel("You have completed "+assessmentsCompleted.size()+" Assessments");
-
-        jListTodo = new JList(assessmentSummary.toArray());
-        jListTodo.setLayoutOrientation(JList.VERTICAL);
-        jListTodo.addListSelectionListener(listSelectionListener);
-
-        jListCompleted = new JList(assessmentsCompleted.toArray());
-        jListCompleted.setLayoutOrientation(JList.VERTICAL);
 
         closeButton = new JButton("Close");
         closeButton.addActionListener(actionListener);
@@ -91,6 +82,26 @@ public class AssessmentSummary
         rootPanel.add(welcomeLabel);
         rootPanel.add(notificationLabel);
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
+
+        if(assessmentSummary!=null)
+        {
+            for(String string : assessmentSummary)
+            {
+                if(string.contains("COMPLETED"))
+                {
+                    assessmentSummary.remove(string);
+                    assessmentsCompleted.add(string);
+                }
+            }
+            jListTodo = new JList(assessmentSummary.toArray());
+            jListTodo.setLayoutOrientation(JList.VERTICAL);
+            jListTodo.addListSelectionListener(listSelectionListener);
+
+            jListCompleted = new JList(assessmentsCompleted.toArray());
+            jListCompleted.setLayoutOrientation(JList.VERTICAL);
+
+        }
+        
 
         rootPanel.add(jListTodo);
         rootPanel.add(Box.createRigidArea(new Dimension(60,60)));

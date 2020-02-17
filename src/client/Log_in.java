@@ -109,8 +109,10 @@ public class Log_in
                 {
                     studentId = null;
 //                    rootPanel.add(new JLabel("Student ID must be numerical"));
-                    idErrorLabel.setVisible(true);
-                    loginErrorLabel.setVisible(false);
+//                    idErrorLabel.setVisible(true);
+//                    loginErrorLabel.setVisible(false);
+                    rootPanel.add(idErrorLabel);
+                    rootPanel.remove(loginErrorLabel);
                     rootPanel.revalidate();
                 }
             }
@@ -128,8 +130,11 @@ public class Log_in
                 if(studentId == null || password == null)
                 {
 //                    rootPanel.add(new JLabel("Missing username or password"));
-                    idErrorLabel.setVisible(false);
-                    loginErrorLabel.setVisible(true);
+//                    idErrorLabel.setVisible(false);
+//                    loginErrorLabel.setVisible(true);
+//                    rootPanel.revalidate();
+                    rootPanel.remove(idErrorLabel);
+                    rootPanel.add(loginErrorLabel);
                     rootPanel.revalidate();
                     return;
                 }
