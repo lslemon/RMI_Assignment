@@ -87,6 +87,7 @@ public class AssessmentSummary
 
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.Y_AXIS));
+        rootPanel.add(Box.createRigidArea(new Dimension(60,150)));
         rootPanel.add(welcomeLabel);
         rootPanel.add(notificationLabel);
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));

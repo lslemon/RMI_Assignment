@@ -42,6 +42,7 @@ public class Log_in
 
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
+        rootPanel.add(Box.createRigidArea(new Dimension(60,150)));
         rootPanel.add(welcomeLabel);
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
         rootPanel.add(loginLabel);
