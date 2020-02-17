@@ -46,7 +46,6 @@ public class AssessmentQuestions
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
         rootPanel.add(Box.createRigidArea(new Dimension(60,150)));
         rootPanel.add(new JLabel(assessment.getInformation()));
-        rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
         rootPanel.add(new JLabel("Assessment Due: "+dateFormat.format(dueDate)));
         rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
         questions = new LinkedList<>();
