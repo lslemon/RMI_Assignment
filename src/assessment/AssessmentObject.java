@@ -1,6 +1,8 @@
 package assessment;
 // AssessmentObject.java
 
+//Sam Duignan 16405836
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

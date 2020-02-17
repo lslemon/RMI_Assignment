@@ -11,8 +11,6 @@ import java.util.Scanner;
 
 public class Client
 {
-    private static int studentId;
-    private static int counter = 0;
 
     private Client()
     {
