@@ -25,7 +25,7 @@ public class ExamEngine implements ExamServer {
         whitelist.put(200,"password");
         Date date = new Date();
         date.setMinutes(2);
-        assessments.add((Assessment)new AssessmentObject("Assessment deciding who is cooler!\nCourse code: 123", date, 100, "123"));
+        assessments.add((Assessment)new AssessmentObject("Assessment deciding who is cooler! Course code: 123", date, 100, "123"));
     }
 
     // Implement the methods defined in the ExamServer interface...

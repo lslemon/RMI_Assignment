@@ -39,6 +39,7 @@ public class AssessmentQuestions
 
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
+        rootPanel.add(new JLabel(assessment.getInformation()));
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
 
         questions = new LinkedList<>();
