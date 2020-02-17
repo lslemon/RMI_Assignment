@@ -104,14 +104,13 @@ public class AssessmentSummary
             jListCompleted.setLayoutOrientation(JList.VERTICAL);
             rootPanel.add(jListTodo);
             rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
-            rootPanel.add(jListCompleted);
             rootPanel.add(assessmentsCompleteLabel);
             rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
+            rootPanel.add(jListCompleted);
         }
         else
         {
             rootPanel.add(assessmentsCompleteLabel);
-            rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
         }
 
         rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
