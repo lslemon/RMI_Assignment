@@ -56,6 +56,7 @@ public class AssessmentSummary
 
     public void loadAssessments()
     {
+        assessmentSummary = null;
         try {
             assessmentSummary = examServer.getAvailableSummary(token, studentId);
         } catch (RemoteException | UnauthorizedAccess | NoMatchingAssessment e) {
