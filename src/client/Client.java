@@ -16,7 +16,7 @@ public class Client
 
     private Client()
     {
-        startClient();
+
     }
 
     private void startClient()
@@ -26,16 +26,20 @@ public class Client
             System.out.print("....Booting up");
             System.out.println("Instantiating Exam Engine");
 
-            Scanner scanner = new Scanner(System.in);
+            //Attact to registry at Port 20345
             Registry registry = LocateRegistry.getRegistry(20345);
 
+            //Get stub code from registry associated with "ExamServer"
             ExamServer engine = (ExamServer) registry.lookup("ExamServer");
 
-            Log_in login = new Log_in(null);
+            //Create Log in Panel class
+            Log_in login = new Log_in();
             JFrame frame = new JFrame("NUIG Assessments");
             frame.setContentPane(login.getRootPanel());
             frame.setVisible(true);
             frame.setSize(700, 600);
+
+            //Login Panel Listener used for handling any Panel events
             login.setPanelListener(new Log_in.LogInListener() {
                 @Override
                 public void onLoginInfoEntered(String password, Integer studentId)
@@ -44,6 +48,7 @@ public class Client
                     int token = 0;
                     try
                     {
+                        //Log into the Exam Server using entered id and password
                         token = engine.login(studentId, password);
                     } catch (UnauthorizedAccess | RemoteException e)
                     {
@@ -51,19 +56,29 @@ public class Client
                         return;
                     }
 
+                    //Use token and ID to get a summary of assessments
                     AssessmentSummary assessmentSummary = new AssessmentSummary(engine, token, studentId);
+
+                    //Swap Login panel with summary panel
                     frame.setContentPane(assessmentSummary.getRootPanel());
                     frame.setVisible(true);
                     int finalToken = token;
                     assessmentSummary.setListener(new AssessmentSummary.SummaryListener() {
-
                         @Override
+                        /**
+                         * When an assessment is chosen the course code,
+                         * the assessment questions panel is opened
+                         */
                         public void onAssessmentChosen(Assessment assessment) {
                             AssessmentQuestions assessmentQuestions =
                                     new AssessmentQuestions(assessment);
                             frame.setContentPane(assessmentQuestions.getRootPanel());
                             frame.setVisible(true);
                             assessmentQuestions.setQuestionListener(new AssessmentQuestions.QuestionListener() {
+                                /**
+                                 * Submission listener handles when a user wishes to submit an assignment
+                                 * @param assessment
+                                 */
                                 @Override
                                 public void onAssignmentSubmission(Assessment assessment)
                                 {
@@ -73,11 +88,16 @@ public class Client
                                             | InvalidOptionNumber | InvalidQuestionNumber e) {
                                         e.printStackTrace();
                                     }
+                                    //Reload the assessment summary as the current panel
                                     assessmentSummary.loadAssessments();
                                     frame.setContentPane(assessmentSummary.getRootPanel());
                                     frame.setVisible(true);
                                 }
 
+                                /**
+                                 * Handles when return button pressed.
+                                 * Reloads the summary panel without submitting any assignments
+                                 */
                                 @Override
                                 public void onReturnPressed()
                                 {
@@ -88,6 +108,10 @@ public class Client
                             });
                         }
 
+                        /**
+                         * Close listener handles when user presses the close button
+                         * and closes the application.
+                         */
                         @Override
                         public void onClosePressed()
                         {
@@ -96,36 +120,6 @@ public class Client
                     });
                 }
             });
-
-//            System.out.println("Enter Student ID");
-//            studentId = 0;
-//            try
-//            {
-//                studentId = scanner.nextInt();
-//            }
-//            catch (InputMismatchException e)
-//            {
-//                System.out.println("Student Id must be comprised of digits 0-9");
-//                studentId = scanner.nextInt();
-//            }
-//            System.out.println("Enter your password");
-//            password = scanner.nextLine();
-//            int token = engine.login(studentId, password);
-//
-//            List<String> assessment_details = engine.getAvailableSummary(token, studentId);
-//
-//            for(String details : assessment_details)
-//            {
-//                System.out.println(details+"\n");
-//            }
-//
-//            System.out.println("Choose an assessment using the correct course code");
-//            String course_code = scanner.nextLine();
-//
-//            Assessment assessment = engine.getAssessment(token, studentId, course_code);
-//
-//            System.out.println(assessment.getInformation());
-//            System.out.println(assessment.getClosingDate().toString());
 
         } catch(Exception e)
         {
@@ -137,5 +131,6 @@ public class Client
     public static void main(String[] args)
     {
         Client client = new Client();
+        client.startClient();
     }
 }

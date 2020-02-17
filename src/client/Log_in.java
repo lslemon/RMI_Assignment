@@ -25,8 +25,6 @@ public class Log_in
     private JTextField studentIdField;
     private JButton logInButton;
     private LogInListener listener;
-    private ExamServer examServer;
-    private int counter;
 
     private String password;
     private Integer studentId;
@@ -36,10 +34,8 @@ public class Log_in
         public void onLoginInfoEntered(String password, Integer studentId);
     }
 
-    public Log_in(ExamServer examServer)
+    public Log_in()
     {
-        this.examServer = examServer;
-
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
         rootPanel.add(Box.createRigidArea(new Dimension(60,150)));
@@ -52,11 +48,9 @@ public class Log_in
 
         passwordField = new JPasswordField();
         passwordField.setSize(200, 50);
-//        passwordField.addActionListener(actionListener);
         passwordField.addFocusListener(focusListener);
         studentIdField = new JTextField();
         studentIdField.setSize(200, 50);
-//        studentIdField.addActionListener(actionListener);
         studentIdField.addFocusListener(focusListener);
 
         loginPanel.add(studentIDLabel);
