@@ -67,11 +67,21 @@ public class AssessmentSummary
         if(assessmentSummary == null)
         {
             notificationLabel = new JLabel("You have "+0+" Assessments waiting for completion");
+
+            for(String string : assessmentSummary)
+            {
+                if(string.contains("COMPLETED"))
+                {
+                    assessmentSummary.remove(string);
+                    assessmentsCompleted.add(string);
+                }
+            }
         }
         else
         {
             notificationLabel = new JLabel("You have "+assessmentSummary.size()+" Assessments waiting for completion");
         }
+
         assessmentsTodoLabel = new JLabel("You have completed "+assessmentsCompleted.size()+" Assessments");
 
         closeButton = new JButton("Close");
@@ -86,14 +96,6 @@ public class AssessmentSummary
 
         if(assessmentSummary!=null)
         {
-            for(String string : assessmentSummary)
-            {
-                if(string.contains("COMPLETED"))
-                {
-                    assessmentSummary.remove(string);
-                    assessmentsCompleted.add(string);
-                }
-            }
             jListTodo = new JList(assessmentSummary.toArray());
             jListTodo.setLayoutOrientation(JList.VERTICAL);
             jListTodo.addListSelectionListener(listSelectionListener);
