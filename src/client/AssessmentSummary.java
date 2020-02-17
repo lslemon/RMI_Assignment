@@ -60,6 +60,7 @@ public class AssessmentSummary
         try {
             assessmentSummary = examServer.getAvailableSummary(token, studentId);
         } catch (RemoteException | UnauthorizedAccess | NoMatchingAssessment e) {
+            System.out.println("No assessments to load");
             e.printStackTrace();
         }
 

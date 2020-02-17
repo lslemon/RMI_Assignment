@@ -26,7 +26,7 @@ public class ExamEngine implements ExamServer {
         Date date = new Date();
         long time = date.getTime() + (long)120000;
         date.setTime(time);
-        assessments.add((Assessment)new AssessmentObject("Assessment deciding who is cooler! Course code: 123", date, 100, "123"));
+//        assessments.add((Assessment)new AssessmentObject("Assessment deciding who is cooler! Course code: 123", date, 100, "123"));
     }
 
     // Implement the methods defined in the ExamServer interface...
