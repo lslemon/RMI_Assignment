@@ -67,7 +67,10 @@ public class AssessmentSummary
         if(assessmentSummary == null)
         {
             notificationLabel = new JLabel("You have "+0+" Assessments waiting for completion");
-
+        }
+        else
+        {
+            notificationLabel = new JLabel("You have "+assessmentSummary.size()+" Assessments waiting for completion");
             for(String string : assessmentSummary)
             {
                 if(string.contains("COMPLETED"))
@@ -76,10 +79,6 @@ public class AssessmentSummary
                     assessmentsCompleted.add(string);
                 }
             }
-        }
-        else
-        {
-            notificationLabel = new JLabel("You have "+assessmentSummary.size()+" Assessments waiting for completion");
         }
 
         assessmentsTodoLabel = new JLabel("You have completed "+assessmentsCompleted.size()+" Assessments");
