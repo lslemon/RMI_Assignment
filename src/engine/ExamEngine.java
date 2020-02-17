@@ -25,7 +25,7 @@ public class ExamEngine implements ExamServer {
         whitelist.put(200,"password");
         Date date = new Date();
         long time = date.getTime() + (long)300000;
-        date.setTime(time);
+        date.setTime((long)1581959400);
         assessments.add((Assessment)new AssessmentObject("Assessment deciding who is cooler! Course code: 123", date, 100, "123"));
     }
 
