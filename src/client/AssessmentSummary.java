@@ -102,6 +102,7 @@ public class AssessmentSummary
 
             jListCompleted = new JList(assessmentsCompleted.toArray());
             jListCompleted.setLayoutOrientation(JList.VERTICAL);
+            rootPanel.add(jListTodo);
             rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
             rootPanel.add(jListCompleted);
             rootPanel.add(assessmentsCompleteLabel);
@@ -112,7 +113,7 @@ public class AssessmentSummary
             rootPanel.add(assessmentsCompleteLabel);
             rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
         }
-        
+
         rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
         rootPanel.add(closeButton);
     }
