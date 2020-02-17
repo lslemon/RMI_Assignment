@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17beda72-517e-4fd1-a803-476846260528" name="Default Changelist" comment="Deleted Main Class created by IntelliJ">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/AssessmentSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/AssessmentSummary.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
