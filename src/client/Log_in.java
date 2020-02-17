@@ -21,6 +21,8 @@ public class Log_in
     private JLabel loginLabel = new JLabel("Please Log in");
     private JLabel studentIDLabel = new JLabel("Student ID");
     private JLabel passwordLabel = new JLabel("Password");
+    private JLabel idErrorLabel = new JLabel("Student ID must be numerical");
+    private JLabel loginErrorLabel = new JLabel("Missing username or password");
     private JPasswordField passwordField;
     private JTextField studentIdField;
     private JButton logInButton;
@@ -43,6 +45,10 @@ public class Log_in
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
         rootPanel.add(loginLabel);
 
+        rootPanel.add(idErrorLabel);
+        rootPanel.add(loginErrorLabel);
+        idErrorLabel.setVisible(false);
+        loginErrorLabel.setVisible(false);
         loginPanel = new JPanel();
         loginPanel.setLayout(new BoxLayout(loginPanel, BoxLayout.PAGE_AXIS));
 
@@ -102,7 +108,9 @@ public class Log_in
                 catch (NumberFormatException exception)
                 {
                     studentId = null;
-                    rootPanel.add(new JLabel("Student ID must be numerical"));
+//                    rootPanel.add(new JLabel("Student ID must be numerical"));
+                    idErrorLabel.setVisible(true);
+                    loginErrorLabel.setVisible(false);
                 }
             }
         }
@@ -118,7 +126,9 @@ public class Log_in
                 System.out.println("Pressed");
                 if(studentId == null || password == null)
                 {
-                    rootPanel.add(new JLabel("Missing username or password"));
+//                    rootPanel.add(new JLabel("Missing username or password"));
+                    idErrorLabel.setVisible(false);
+                    loginErrorLabel.setVisible(true);
                     return;
                 }
 
