@@ -21,7 +21,7 @@ public class AssessmentSummary
     private JPanel rootPanel;
     private JLabel welcomeLabel;
     private JLabel notificationLabel;
-    private JLabel assessmentsTodoLabel;
+    private JLabel assessmentsCompleteLabel;
     private JList jListTodo;
     private JList jListCompleted;
     private JButton closeButton;
@@ -82,7 +82,7 @@ public class AssessmentSummary
             notificationLabel = new JLabel("You have "+assessmentSummary.size()+" Assessments waiting for completion");
         }
 
-        assessmentsTodoLabel = new JLabel("You have completed "+assessmentsCompleted.size()+" Assessments");
+        assessmentsCompleteLabel = new JLabel("You have completed "+assessmentsCompleted.size()+" Assessments");
 
         closeButton = new JButton("Close");
         closeButton.addActionListener(actionListener);
@@ -104,15 +104,15 @@ public class AssessmentSummary
             jListCompleted.setLayoutOrientation(JList.VERTICAL);
             rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
             rootPanel.add(jListCompleted);
+            rootPanel.add(assessmentsCompleteLabel);
+            rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
         }
         else
         {
-            rootPanel.add(assessmentsTodoLabel);
+            rootPanel.add(assessmentsCompleteLabel);
             rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
         }
-
-
-
+        
         rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
         rootPanel.add(closeButton);
     }
