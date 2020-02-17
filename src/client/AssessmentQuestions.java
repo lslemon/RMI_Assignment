@@ -10,6 +10,9 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.lang.Object;
@@ -24,6 +27,8 @@ public class AssessmentQuestions
     private Assessment assessment;
     private List<Question> questions;
 
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.M.yyyy hh:mm");
+
     private List<ButtonGroup> questionButtons;
 
     public interface QuestionListener
@@ -36,13 +41,14 @@ public class AssessmentQuestions
     public AssessmentQuestions(Assessment assessment)
     {
         this.assessment = assessment;
-
+        Date dueDate = assessment.getClosingDate();
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.PAGE_AXIS));
         rootPanel.add(Box.createRigidArea(new Dimension(60,150)));
         rootPanel.add(new JLabel(assessment.getInformation()));
         rootPanel.add(Box.createRigidArea(new Dimension(60, 60)));
-
+        rootPanel.add(new JLabel("Assessment Due: "+dateFormat.format(dueDate)));
+        rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
         questions = new LinkedList<>();
         questionButtons = new LinkedList<>();
 
