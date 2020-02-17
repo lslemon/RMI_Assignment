@@ -101,7 +101,7 @@ public class AssessmentSummary
             jListCompleted.setLayoutOrientation(JList.VERTICAL);
 
         }
-        
+
 
         rootPanel.add(jListTodo);
         rootPanel.add(Box.createRigidArea(new Dimension(60,60)));
