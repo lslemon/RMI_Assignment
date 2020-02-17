@@ -111,6 +111,7 @@ public class Log_in
 //                    rootPanel.add(new JLabel("Student ID must be numerical"));
                     idErrorLabel.setVisible(true);
                     loginErrorLabel.setVisible(false);
+                    rootPanel.revalidate();
                 }
             }
         }
@@ -129,6 +130,7 @@ public class Log_in
 //                    rootPanel.add(new JLabel("Missing username or password"));
                     idErrorLabel.setVisible(false);
                     loginErrorLabel.setVisible(true);
+                    rootPanel.revalidate();
                     return;
                 }
 
