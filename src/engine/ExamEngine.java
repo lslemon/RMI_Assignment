@@ -24,8 +24,8 @@ public class ExamEngine implements ExamServer {
         whitelist.put(100,"password");
         whitelist.put(200,"password");
         Date date = new Date();
-        long time = date.getTime() + (long)300000;
-        date.setTime((long)1581959400);
+        long time = date.getTime() + (long)120000;
+        date.setTime(time);
         assessments.add((Assessment)new AssessmentObject("Assessment deciding who is cooler! Course code: 123", date, 100, "123"));
     }
 
@@ -67,7 +67,7 @@ public class ExamEngine implements ExamServer {
 
         for(Assessment cur_assess: assessments)
         {
-            if(cur_assess.getAssociatedID() == studentid  && cur_assess.getClosingDate().before(new Date()))
+            if(cur_assess.getAssociatedID() == studentid  && new Date().before(cur_assess.getClosingDate()))
             {
                 summaries.add(cur_assess.getInformation());
             }
